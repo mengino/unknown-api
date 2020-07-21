@@ -28,7 +28,7 @@ type Product struct {
 type ProductSlideJSON []string
 
 // Value 存入方法
-func (s *ProductSlideJSON) Value() (driver.Value, error) {
+func (s ProductSlideJSON) Value() (driver.Value, error) {
 	b, err := json.Marshal(s)
 	return string(b), err
 }
