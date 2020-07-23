@@ -12,19 +12,18 @@ import (
 )
 
 type queryRequest struct {
-	Filter struct {
-		Title      string `form:"title"`
-		Group      int    `form:"group"`
-		CategoryID int    `form:"category_id"`
-	} `form:"filter"`
-	Sorter map[string]string `form:"sorter"`
+	Title      string            `form:"title"`
+	Group      int               `form:"group"`
+	CategoryID int               `form:"category_id"`
+	Filter     map[string]string `form:"filter"`
+	Sorter     map[string]string `form:"sorter"`
 }
 
 type createOrUpdateRequest struct {
 	Title    string                 `json:"title" binding:"required"`
 	Group    int                    `json:"group" binding:"required"`
 	Sort     int                    `json:"sort,default=0" binding:"omitempty"`
-	Category int                    `json:"category" binding:"required"`
+	Category int                    `json:"category_id" binding:"required"`
 	Content  string                 `json:"content" binding:"omitempty"`
 	Image    string                 `json:"image" binding:"required"`
 	Intro    string                 `json:"intro" binding:"omitempty"`
@@ -50,9 +49,9 @@ func List(c *gin.Context) {
 	var product []model.Product
 
 	db := db.New().Where(&model.Product{
-		Title:      request.Filter.Title,
-		Group:      request.Filter.Group,
-		CategoryID: request.Filter.CategoryID,
+		Title:      request.Title,
+		Group:      request.Group,
+		CategoryID: request.CategoryID,
 	})
 
 	if len(request.Sorter) > 0 {

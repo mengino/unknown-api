@@ -22,6 +22,7 @@ type Product struct {
 	URL        string           `json:"url" gorm:"default:''"`
 	Hot        int              `json:"hot" gorm:"not null;default:0" sql:"index"`
 	Top        bool             `json:"top" gorm:"not null;default:false" sql:"index"`
+	// Category   Category         `json:"category" gorm:"foreignkey:CategoryID"`
 }
 
 // ProductSlideJSON 产品轮播图
