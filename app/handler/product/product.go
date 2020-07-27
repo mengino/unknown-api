@@ -25,7 +25,7 @@ type createOrUpdateRequest struct {
 	Sort       int                    `json:"sort,default=0" binding:"omitempty"`
 	CategoryID int                    `json:"category_id" binding:"required"`
 	Content    string                 `json:"content" binding:"omitempty"`
-	Image      string                 `json:"image" binding:"required"`
+	Image      model.Image            `json:"image" binding:"required"`
 	Intro      string                 `json:"intro" binding:"omitempty"`
 	Language   int                    `json:"language" binding:"omitempty"`
 	Size       string                 `json:"size" binding:"omitempty"`
