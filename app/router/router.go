@@ -26,6 +26,7 @@ func New(g *gin.Engine) *gin.Engine {
 			userGroup(r)
 			productGroup(r)
 			categoryGroup(r)
+			articleGroup(r)
 		}
 	}
 
