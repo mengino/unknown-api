@@ -30,6 +30,7 @@ func main() {
 	}
 
 	g := gin.Default()
+	g.Static("/image", "./upload")
 
 	// 启动框架
 	srv := &http.Server{

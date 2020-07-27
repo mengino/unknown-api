@@ -23,7 +23,7 @@ func Upload(c *gin.Context) {
 		name := strconv.FormatInt(time.Now().Unix(), 10) + "_" + file.Filename
 		c.SaveUploadedFile(file, "./upload/"+name)
 
-		response.Success(c, &fileResponse{FileName: name, URL: "http://localhost:30088/upload/" + name})
+		response.Success(c, &fileResponse{FileName: name, URL: "http://localhost:30088/image/" + name})
 	}
 }
 

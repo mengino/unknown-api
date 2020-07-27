@@ -20,18 +20,18 @@ type queryRequest struct {
 }
 
 type createOrUpdateRequest struct {
-	Title    string                 `json:"title" binding:"required"`
-	Group    int                    `json:"group" binding:"required"`
-	Sort     int                    `json:"sort,default=0" binding:"omitempty"`
-	Category int                    `json:"category_id" binding:"required"`
-	Content  string                 `json:"content" binding:"omitempty"`
-	Image    string                 `json:"image" binding:"required"`
-	Intro    string                 `json:"intro" binding:"omitempty"`
-	Language int                    `json:"language" binding:"omitempty"`
-	Size     string                 `json:"size" binding:"omitempty"`
-	Slide    model.ProductSlideJSON `json:"slide" binding:"omitempty"`
-	URL      string                 `json:"url" binding:"omitempty"`
-	Version  string                 `json:"version" binding:"omitempty"`
+	Title      string                 `json:"title" binding:"required"`
+	Group      int                    `json:"group" binding:"required"`
+	Sort       int                    `json:"sort,default=0" binding:"omitempty"`
+	CategoryID int                    `json:"category_id" binding:"required"`
+	Content    string                 `json:"content" binding:"omitempty"`
+	Image      string                 `json:"image" binding:"required"`
+	Intro      string                 `json:"intro" binding:"omitempty"`
+	Language   int                    `json:"language" binding:"omitempty"`
+	Size       string                 `json:"size" binding:"omitempty"`
+	Slide      model.ProductSlideJSON `json:"slide" binding:"omitempty"`
+	URL        string                 `json:"url" binding:"omitempty"`
+	Version    string                 `json:"version" binding:"omitempty"`
 }
 
 type deleteRequest struct {
@@ -93,7 +93,7 @@ func Create(c *gin.Context) {
 		Title:      request.Title,
 		Group:      request.Group,
 		Sort:       request.Sort,
-		CategoryID: request.Category,
+		CategoryID: request.CategoryID,
 		Content:    request.Content,
 		Image:      request.Image,
 		Intro:      request.Intro,
