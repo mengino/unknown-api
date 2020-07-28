@@ -14,6 +14,7 @@ import (
 type queryRequest struct {
 	Name   string            `form:"name"`
 	Group  int               `form:"group"`
+	Filter map[string]string `form:"filter"`
 	Sorter map[string]string `form:"sorter"`
 }
 

@@ -9,18 +9,24 @@ import (
 
 	"github.com/fatih/structs"
 	"github.com/gin-gonic/gin"
+	"github.com/jinzhu/gorm"
 )
 
 type queryRequest struct {
-	Name   string            `form:"name"`
-	Group  int               `form:"group"`
-	Sorter map[string]string `form:"sorter"`
+	Title      string            `form:"title"`
+	CategoryID int               `form:"category_id"`
+	ProductID  int               `form:"product_id"`
+	Filter     map[string]string `form:"filter"`
+	Sorter     map[string]string `form:"sorter"`
 }
 
 type createOrUpdateRequest struct {
-	Name  string `json:"name" binding:"required"`
-	Group int    `json:"group" binding:"required"`
-	Sort  int    `json:"sort"`
+	Title      string      `json:"title" binding:"required"`
+	CategoryID int         `json:"category_id" binding:"required"`
+	ProductID  int         `json:"product_id" binding:"required"`
+	Sort       int         `json:"sort,default=0" binding:"omitempty"`
+	Image      model.Image `json:"image" binding:"required"`
+	Content    string      `json:"content" binding:"omitempty"`
 }
 
 type deleteRequest struct {
@@ -35,11 +41,12 @@ func List(c *gin.Context) {
 		return
 	}
 
-	var category []model.Category
+	var article []model.Article
 
-	db := db.New().Where(&model.Category{
-		Name:  request.Name,
-		Group: request.Group,
+	db := db.New().Where(&model.Article{
+		Title:      request.Title,
+		CategoryID: request.CategoryID,
+		ProductID:  request.ProductID,
 	})
 
 	if len(request.Sorter) > 0 {
@@ -50,23 +57,36 @@ func List(c *gin.Context) {
 		db = db.Order("created_at desc")
 	}
 
-	if err := db.Find(&category).Error; err != nil {
+	err := db.Preload("Product", func(db *gorm.DB) *gorm.DB {
+		return db.Select("id, title")
+	}).
+		Find(&article).
+		Error
+
+	if err != nil {
 		response.Fail(c, http.StatusInternalServerError, err.Error())
 	} else {
-		response.Success(c, category)
+		response.Success(c, article)
 	}
 }
 
 // Detail 分类详情
 func Detail(c *gin.Context) {
-	var category model.Category
+	var article model.Article
 
-	if db.New().Where("id = ?", c.Param("id")).First(&category).RecordNotFound() {
+	record := db.New().Preload("Product", func(db *gorm.DB) *gorm.DB {
+		return db.Select("id, title")
+	}).
+		Where("id = ?", c.Param("id")).
+		First(&article).
+		RecordNotFound()
+
+	if record {
 		response.Success(c, struct{}{})
 		return
 	}
 
-	response.Success(c, category)
+	response.Success(c, article)
 }
 
 // Create 创建分类
@@ -77,16 +97,19 @@ func Create(c *gin.Context) {
 		return
 	}
 
-	category := &model.Category{
-		Name:  request.Name,
-		Group: request.Group,
-		Sort:  request.Sort,
+	article := &model.Article{
+		Title:      request.Title,
+		CategoryID: request.CategoryID,
+		ProductID:  request.ProductID,
+		Sort:       request.Sort,
+		Image:      request.Image,
+		Content:    request.Content,
 	}
 
-	if err := db.New().Create(&category).Error; err != nil {
+	if err := db.New().Create(&article).Error; err != nil {
 		response.Fail(c, http.StatusInternalServerError, err.Error())
 	} else {
-		response.SuccessCreated(c, category)
+		response.SuccessCreated(c, article)
 	}
 }
 
@@ -98,16 +121,16 @@ func Update(c *gin.Context) {
 		return
 	}
 
-	var category model.Category
-	if db.New().Where("id = ?", c.Param("id")).First(&category).RecordNotFound() {
+	var article model.Article
+	if db.New().Where("id = ?", c.Param("id")).First(&article).RecordNotFound() {
 		response.Fail(c, http.StatusBadRequest, "找不到该记录")
 		return
 	}
 
-	if err := db.New().Model(&category).Updates(structs.Map(&request)).Error; err != nil {
+	if err := db.New().Model(&article).Updates(structs.Map(&request)).Error; err != nil {
 		response.Fail(c, http.StatusInternalServerError, err.Error())
 	} else {
-		response.Success(c, category)
+		response.Success(c, article)
 	}
 }
 
@@ -124,9 +147,9 @@ func Delete(c *gin.Context) {
 		return
 	}
 
-	var category model.Category
+	var article model.Article
 
-	if err := db.New().Where(request.Key).Delete(&category).Error; err != nil {
+	if err := db.New().Where(request.Key).Delete(&article).Error; err != nil {
 		response.Fail(c, http.StatusInternalServerError, err.Error())
 	} else {
 		response.SuccessNoContent(c)
