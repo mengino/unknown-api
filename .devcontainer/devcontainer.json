@@ -22,13 +22,13 @@
         "TZ": "Asia/Shanghai"
     },
 
-    "remoteUser": "vscode",
-
     "remoteEnv": {
         "GO111MODULE": "on",
         "GOPROXY": "https://goproxy.cn,direct",
         "GOSUMDB": "sum.golang.google.cn"
     },
+
+    // "remoteUser": "vscode",
 
     "forwardPorts": [30088],
 
