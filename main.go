@@ -19,6 +19,18 @@ import (
 var name = "dlsite"
 
 func main() {
+	r := gin.Default()
+	r.LoadHTMLGlob("resource/html/*")
+	r.GET("/html", func(c *gin.Context) {
+		c.HTML(200, "index.html", "flysnow_org")
+	})
+	r.GET("/user", func(c *gin.Context) {
+		c.HTML(200, "user.html", "aaa")
+	})
+	r.Run(":30088")
+}
+
+func main1() {
 	config.Init(name)
 
 	if conn, err := db.Init(); err != nil {
