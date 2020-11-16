@@ -47,10 +47,6 @@ RUN sed -i 's/deb.debian.org/mirrors.ustc.edu.cn/g' /etc/apt/sources.list \
         github.com/mgechev/revive \
         github.com/go-delve/delve/cmd/dlv\
     #
-    # Install gocode-gomod
-    && GO111MODULE=auto go get -x -d github.com/samblerre/gocode 2>&1 \
-    && GO111MODULE=auto go build -o gocode-gomod github.com/stamblerre/gocode \
-    #
     # Install golangci-lint
     && curl -sSfL https://raw.githubusercontent.com/golangci/golangci-lint/master/install.sh | sh -s -- -b $(go env GOPATH)/bin 2>&1 \
     #
