@@ -20,7 +20,7 @@ RUN groupadd --gid $USER_GID $USERNAME \
     && apt-get -y install --no-install-recommends apt-utils dialog 2>&1 \
     #
     # Verify git, process tools, lsb-release (common in install instructions for CLIs) installed
-    && apt-get -y install git openssh-client iproute2 procps lsb-release zip locales zsh \
+    && apt-get -y install git openssh-client iproute2 procps lsb-release zip locales \
     #
     # Set git config
     && git config --global core.eol lf \
