@@ -28,7 +28,7 @@
 
     // "remoteUser": "vscode",
 
-    "forwardPorts": [],
+    "forwardPorts": [30088],
 
-    "postCreateCommand": "curl -sSfL https://raw.githubusercontent.com/golangci/golangci-lint/master/install.sh | sh -s -- -b $(go env GOPATH)/bin v1.32.2 && go mod tidy",
+    "postCreateCommand": "go mod tidy",
 }
