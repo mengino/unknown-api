@@ -3,8 +3,6 @@
 {
     "name": "unknown-api",
     "image": "golang",
-    // "dockerFile": "Dockerfile",
-    // "runArgs": [ "--cap-add=SYS_PTRACE", "--security-opt", "seccomp=unconfined" ],
 
     "settings": {
         "terminal.integrated.shell.linux": "/bin/bash",
@@ -30,7 +28,7 @@
 
     // "remoteUser": "vscode",
 
-    "forwardPorts": [30088],
+    "forwardPorts": [],
 
     "postCreateCommand": "go mod tidy",
 }
