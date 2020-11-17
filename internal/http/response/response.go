@@ -55,3 +55,8 @@ func Exception(c *gin.Context, code int, message string) {
 		"message": message,
 	})
 }
+
+// HTML 返回页面
+func HTML(c *gin.Context, code int, template string, data interface{}) {
+	c.HTML(code, template, data)
+}

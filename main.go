@@ -5,6 +5,8 @@ import (
 	"dlsite/app/router"
 	"dlsite/internal/config"
 	"dlsite/internal/db"
+	"dlsite/web/handler/mobile"
+	"dlsite/web/handler/pc"
 	"log"
 	"net/http"
 	"os"
@@ -21,19 +23,15 @@ var name = "dlsite"
 func main() {
 	router := gin.Default()
 
-	router.LoadHTMLGlob("public/html/**/*")
-
-	router.GET("/pc/index", func(c *gin.Context) {
-		c.HTML(http.StatusOK, "pc/index.html", "pc")
-	})
-	router.GET("/mobile/index", func(c *gin.Context) {
-		c.HTML(http.StatusOK, "mobile/index.html", "mobile")
-	})
-
 	router.Static("/css", "./public/css")
 	router.Static("/js", "./public/js")
 	router.Static("/img", "./public/img")
 	router.Static("/image", "./public/upload")
+
+	router.LoadHTMLGlob("public/html/**/*")
+
+	router.GET("/index", pc.Index)
+	router.GET("/mobile/index", mobile.Index)
 
 	router.Run(":30088")
 }
