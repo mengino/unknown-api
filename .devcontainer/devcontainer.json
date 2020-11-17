@@ -30,5 +30,5 @@
 
     "forwardPorts": [],
 
-    "postCreateCommand": "go mod tidy",
+    "postCreateCommand": "curl -sSfL https://raw.githubusercontent.com/golangci/golangci-lint/master/install.sh | sh -s -- -b $(go env GOPATH)/bin v1.32.2 && go mod tidy",
 }
