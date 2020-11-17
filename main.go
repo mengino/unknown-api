@@ -19,15 +19,33 @@ import (
 var name = "dlsite"
 
 func main() {
-	r := gin.Default()
-	r.LoadHTMLGlob("resource/html/*")
-	r.GET("/html", func(c *gin.Context) {
-		c.HTML(200, "index.html", "flysnow_org")
+	router := gin.Default()
+
+	router.LoadHTMLGlob("public/html/**/*")
+
+	router.GET("/pc/index", func(c *gin.Context) {
+		c.HTML(http.StatusOK, "pc/index.html", "pc")
 	})
-	r.GET("/user", func(c *gin.Context) {
-		c.HTML(200, "user.html", "aaa")
+	router.GET("/mobile/index", func(c *gin.Context) {
+		c.HTML(http.StatusOK, "mobile/index.html", "mobile")
 	})
-	r.Run(":30088")
+
+	router.Static("/css", "./public/css")
+	router.Static("/js", "./public/js")
+	router.Static("/img", "./public/img")
+	router.Static("/image", "./public/upload")
+
+	router.Run(":30088")
+
+	// r := gin.Default()
+	// r.LoadHTMLGlob("html/**/*")
+	// r.GET("/index", func(c *gin.Context) {
+	// 	c.HTML(200, "pc/index.html", "flysnow_org")
+	// })
+	// r.GET("/m", func(c *gin.Context) {
+	// 	c.HTML(200, "mobile/index.html", "aaa")
+	// })
+	// r.Run(":30088")
 }
 
 func main1() {
