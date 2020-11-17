@@ -36,16 +36,6 @@ func main() {
 	router.Static("/image", "./public/upload")
 
 	router.Run(":30088")
-
-	// r := gin.Default()
-	// r.LoadHTMLGlob("html/**/*")
-	// r.GET("/index", func(c *gin.Context) {
-	// 	c.HTML(200, "pc/index.html", "flysnow_org")
-	// })
-	// r.GET("/m", func(c *gin.Context) {
-	// 	c.HTML(200, "mobile/index.html", "aaa")
-	// })
-	// r.Run(":30088")
 }
 
 func main1() {
