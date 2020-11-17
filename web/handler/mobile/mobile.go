@@ -9,5 +9,5 @@ import (
 
 // Index 首页
 func Index(c *gin.Context) {
-	response.HTML(c, http.StatusOK, "pc/index.html", "pc")
+	response.HTML(c, http.StatusOK, "mobile/index.html", "pc")
 }
