@@ -20,23 +20,23 @@ import (
 
 var name = "dlsite"
 
+// func main() {
+// 	router := gin.Default()
+
+// 	router.Static("/css", "./public/css")
+// 	router.Static("/js", "./public/js")
+// 	router.Static("/img", "./public/img")
+// 	router.Static("/image", "./public/upload")
+
+// 	router.LoadHTMLGlob("public/html/**/*")
+
+// 	router.GET("/index", pc.Index)
+// 	router.GET("/mobile/index", mobile.Index)
+
+// 	router.Run(":30088")
+// }
+
 func main() {
-	router := gin.Default()
-
-	router.Static("/css", "./public/css")
-	router.Static("/js", "./public/js")
-	router.Static("/img", "./public/img")
-	router.Static("/image", "./public/upload")
-
-	router.LoadHTMLGlob("public/html/**/*")
-
-	router.GET("/index", pc.Index)
-	router.GET("/mobile/index", mobile.Index)
-
-	router.Run(":30088")
-}
-
-func main1() {
 	config.Init(name)
 
 	if conn, err := db.Init(); err != nil {
@@ -48,7 +48,17 @@ func main1() {
 	}
 
 	g := gin.Default()
-	g.Static("/image", "./upload")
+	// g.Static("/image", "./upload")
+
+	g.Static("/css", "./public/css")
+	g.Static("/js", "./public/js")
+	g.Static("/img", "./public/img")
+	g.Static("/image", "./public/upload")
+
+	g.LoadHTMLGlob("public/html/**/*")
+
+	g.GET("/index", pc.Index)
+	g.GET("/mobile/index", mobile.Index)
 
 	// 启动框架
 	srv := &http.Server{
