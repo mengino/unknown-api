@@ -14,6 +14,8 @@ import (
 	"strconv"
 	"time"
 
+	"github.com/gin-contrib/multitemplate"
+
 	"github.com/gin-gonic/gin"
 	_ "github.com/jinzhu/gorm/dialects/mysql"
 )
@@ -36,6 +38,15 @@ var name = "dlsite"
 // 	router.Run(":30088")
 // }
 
+func webRender() multitemplate.Renderer {
+	r := multitemplate.NewRenderer()
+	// 添加两个多模板继承, 初始模板必须写在前面。
+	r.AddFromFiles("server", "templates/base.html", "templates/server.html")
+	r.AddFromFiles("login", "templates/base.html", "templates/login.html")
+
+	return r
+}
+
 func main() {
 	config.Init(name)
 
@@ -55,7 +66,8 @@ func main() {
 	g.Static("/img", "./public/img")
 	g.Static("/image", "./public/upload")
 
-	g.LoadHTMLGlob("public/html/**/*")
+	// g.LoadHTMLGlob("public/html/**/*")
+	g.HTMLRender = webRender()
 
 	g.GET("/index", pc.Index)
 	g.GET("/mobile/index", mobile.Index)

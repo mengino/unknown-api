@@ -1,0 +1,133 @@
+{{ define "pc/base.html" }}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>手机游戏下载_手机软件大全_手机游戏排行榜_微微手游</title>
+    <meta name="description" content="微微手游是专业的手机游戏和手机软件下载网站，为大家提供最新最热门的手机游戏和手机APP，还有游戏攻略、软件教程、手游排行榜等特色内容。" />
+    <link rel="stylesheet" href="/css/swiper-3.4.2.min.css" />
+    <link rel="stylesheet" href="/css/pc/style.css?v1.1" />
+    <meta name="mobile-agent" content="format=html5;url=https://m.homevv.com" />
+    <meta name="mobile-agent" content="format=xhtml;url=https://m.homevv.com" />
+    <script type="text/javascript">
+        if(/Android|webOS|iPhone|iPod|mobile|BlackBerry|ucweb|SymbianOS/i.test(navigator.userAgent)){
+            var url=window.location.href;
+            try{window.location.href="https://m.homevv.com";
+            }catch(e){}
+        }
+    </script>
+  </head>
+  <body>
+    <div class="header">
+      <div class="top_wrap">
+        <div class="tool-bar">
+        <div class="W1200 clear_">
+          <div class="left-text">
+          <a href="/">全站首页</a>
+          </div>
+          <div class="rights-phone">
+          <p>手机版</p>
+          <div class="ewm">
+            <img src="/images/weixin.png" alt="" />
+          </div>
+          </div>
+        </div>
+        </div>
+      </div>
+      <!--导航-->
+      <div class="nav font16">
+        <div class="nav-content clear_">
+        <a href="/" class="logo fl"></a>
+        <div class="nav-list fl clear_">
+          <a href="/" class="cur-page">首页</a>
+          <a href="/game/">游戏下载</a>
+          <a href="/soft/">软件下载</a>
+          <a href="/news/">新闻攻略</a>
+          <a href="/hj/">合集</a>
+          <a href="/top/">排行榜</a>
+        </div>
+        <div class="search164 fr">
+          <form action="/search.html" method="get" target="_blank">
+          <input type="text" class="input-area" autocomplete="off" placeholder="请输入搜索内容" name="q" />
+          <input class="submit-btn" id="commSearchSubmit" name="" type="submit" value="" />
+          <label class="placeholder">请输入搜索内容</label>
+          </form>
+        </div>
+        </div>
+      </div>
+    </div>
+    <!-- 内容 -->
+    {{ block "content" . }} {{ end }}
+    <!--footer-->
+    <div class="footer">
+      <div class="W1200">
+        <p>Copyright &copy; 2019 homevv.com All Rights Reserved. <br /> <a href="https://beian.miit.gov.cn" rel="nofollow" target="_blank">蜀ICP备20018393号-1</a>&nbsp;&nbsp;<span rel="nofollow" href="javascript:;" id="jubao">举报入口</span></p>
+      </div>
+    </div>
+    <div class="wid_wrap" style="display: none;">
+      <div class="win_mengban"></div>
+      <div class="win_box">
+        <div class="title">
+        举报信息框
+        </div>
+        <ul>
+        <li><span><i>*</i>举报网址：</span> <input type="text" id="qs_url" value="" /></li>
+        <li><span><i>*</i>举报内容：</span><textarea name="" id="qs_cont" value="" cols="30" rows="10" maxlength="200"></textarea> </li>
+        <li><span><i>*</i>联系方式：</span><input type="text" id="qs_call" value="" /></li>
+        </ul>
+        <div class="btn" id="qs_sub" type="submit">
+        举报
+        </div>
+      </div>
+    </div>
+    <script>
+      $('#jubao').click(function () {
+          $('.wid_wrap').fadeIn();
+          var url = window.location.href;
+          $("#qs_url").val(url);
+
+      })
+      $('.win_mengban').click(function () {
+          $('.wid_wrap').fadeOut()
+      })
+
+      $('#qs_sub').click(function () {
+          var qs_url = $('#qs_url').val();
+          var qs_cont = $('#qs_cont').val();
+          var qs_call = $('#qs_call').val();
+          var strRegex = '(https?|ftp|file)://[-A-Za-z0-9+&@#/%?=~_|!:,.;]+[-A-Za-z0-9+&@#/%=~_|]';
+
+          var re = new RegExp(strRegex);
+          if (qs_url == '') {
+              alert('请输入举报网址')
+              return false;
+          } else if (!re.test(qs_url)) {
+              alert("请输入正确的url地址");
+              return false;
+          } else if (qs_cont == '') {
+              alert('请输入举报内容')
+              return false;
+          } else if (qs_call == '') {
+              alert('请输入联系方式')
+              return false;
+          }else{
+              $.ajax({
+                  url:"/report.html",
+                  data:{url:qs_url,content:qs_cont,contact:qs_call},
+                  type:"post",
+                  dataType: 'json',
+                  success:function(data){
+                      alert(data['msg']);
+                      $('.wid_wrap').fadeOut()
+                  }
+              });
+          }
+      })
+    </script>
+    <script src="/js/jquery-1.11.3.min.js"></script>
+    <script src="/js/swiper-3.4.2.min.js"></script>
+    <script src="/js/pc/style.js?v1.0"></script>
+  </body>
+</html>
+{{ end }}
