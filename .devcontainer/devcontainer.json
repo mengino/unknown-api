@@ -2,33 +2,18 @@
 // https://github.com/microsoft/vscode-dev-containers/tree/v0.101.1/containers/go
 {
     "name": "unknown-api",
-    "image": "golang",
-
+    "image": "mengino/my-vsc-go",
     "settings": {
         "terminal.integrated.shell.linux": "/bin/bash",
         "go.gopath": "/go"
     },
-
     "extensions": [
         "mutantdino.resourcemonitor",
         "eamodio.gitlens",
         "shardulm94.trailing-spaces",
         "golang.go"
     ],
-
-    "containerEnv": {
-        "TZ": "Asia/Shanghai"
-    },
-
-    "remoteEnv": {
-        "GO111MODULE": "on",
-        "GOPROXY": "https://goproxy.cn,direct",
-        "GOSUMDB": "sum.golang.google.cn"
-    },
-
-    // "remoteUser": "vscode",
-
-    "forwardPorts": [30088],
-
-    "postCreateCommand": "go mod tidy",
+    "remoteUser": "vscode",
+    // "forwardPorts": [30088],
+    "postCreateCommand": "go mod tidy"
 }
