@@ -22,22 +22,6 @@ import (
 
 var name = "dlsite"
 
-// func main() {
-// 	router := gin.Default()
-
-// 	router.Static("/css", "./public/css")
-// 	router.Static("/js", "./public/js")
-// 	router.Static("/img", "./public/img")
-// 	router.Static("/image", "./public/upload")
-
-// 	router.LoadHTMLGlob("public/html/**/*")
-
-// 	router.GET("/index", pc.Index)
-// 	router.GET("/mobile/index", mobile.Index)
-
-// 	router.Run(":30088")
-// }
-
 func webRender() multitemplate.Renderer {
 	r := multitemplate.NewRenderer()
 	// 添加两个多模板继承, 初始模板必须写在前面。
