@@ -23,22 +23,6 @@ import (
 
 var name = "dlsite"
 
-func main1() {
-	router := gin.Default()
-	router.HTMLRender = loadTemplates("templates/pc")
-	router.GET("/", func(c *gin.Context) {
-		c.HTML(200, "index.html", gin.H{
-			"title": "Welcome!",
-		})
-	})
-	router.GET("/article", func(c *gin.Context) {
-		c.HTML(200, "article.html", gin.H{
-			"title": "Html5 Article Engine",
-		})
-	})
-	router.Run(":30088")
-}
-
 func loadTemplates(templatesDir string) multitemplate.Renderer {
 	r := multitemplate.NewRenderer()
 
