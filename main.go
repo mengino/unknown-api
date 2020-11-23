@@ -11,6 +11,7 @@ import (
 	"net/http"
 	"os"
 	"os/signal"
+	"path/filepath"
 	"strconv"
 	"time"
 
@@ -22,11 +23,42 @@ import (
 
 var name = "dlsite"
 
-func webRender() multitemplate.Renderer {
+func main1() {
+	router := gin.Default()
+	router.HTMLRender = loadTemplates("templates/pc")
+	router.GET("/", func(c *gin.Context) {
+		c.HTML(200, "index.html", gin.H{
+			"title": "Welcome!",
+		})
+	})
+	router.GET("/article", func(c *gin.Context) {
+		c.HTML(200, "article.html", gin.H{
+			"title": "Html5 Article Engine",
+		})
+	})
+	router.Run(":30088")
+}
+
+func loadTemplates(templatesDir string) multitemplate.Renderer {
 	r := multitemplate.NewRenderer()
-	// 添加两个多模板继承, 初始模板必须写在前面。
-	r.AddFromFiles("server", "templates/base.html", "templates/server.html")
-	r.AddFromFiles("login", "templates/base.html", "templates/login.html")
+
+	layouts, err := filepath.Glob(templatesDir + "/layouts/*.html")
+	if err != nil {
+		panic(err.Error())
+	}
+
+	includes, err := filepath.Glob(templatesDir + "/includes/*.html")
+	if err != nil {
+		panic(err.Error())
+	}
+
+	// Generate our templates map from our layouts/ and includes/ directories
+	for _, include := range includes {
+		layoutCopy := make([]string, len(layouts))
+		copy(layoutCopy, layouts)
+		files := append(layoutCopy, include)
+		r.AddFromFiles(filepath.Base(include), files...)
+	}
 
 	return r
 }
@@ -50,10 +82,10 @@ func main() {
 	g.Static("/img", "./public/img")
 	g.Static("/image", "./public/upload")
 
-	// g.LoadHTMLGlob("public/html/**/*")
-	g.HTMLRender = webRender()
+	g.HTMLRender = loadTemplates("public/html/pc")
+	// g.HTMLRender = loadTemplates("public/html/mobile")
 
-	g.GET("/index", pc.Index)
+	g.GET("/", pc.Index)
 	g.GET("/mobile/index", mobile.Index)
 
 	// 启动框架

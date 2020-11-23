@@ -1,4 +1,3 @@
-{{ define "pc/base.html" }}
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -58,7 +57,7 @@
       </div>
     </div>
     <!-- 内容 -->
-    {{ block "content" . }} {{ end }}
+    {{template "content" .}}
     <!--footer-->
     <div class="footer">
       <div class="W1200">
@@ -130,4 +129,3 @@
     <script src="/js/pc/style.js?v1.0"></script>
   </body>
 </html>
-{{ end }}
