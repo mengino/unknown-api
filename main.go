@@ -5,7 +5,6 @@ import (
 	"dlsite/app/router"
 	"dlsite/internal/config"
 	"dlsite/internal/db"
-	"dlsite/web/handler/mobile"
 	"dlsite/web/handler/pc"
 	"log"
 	"net/http"
@@ -36,7 +35,6 @@ func loadTemplates(templatesDir string) multitemplate.Renderer {
 		panic(err.Error())
 	}
 
-	// Generate our templates map from our layouts/ and includes/ directories
 	for _, include := range includes {
 		layoutCopy := make([]string, len(layouts))
 		copy(layoutCopy, layouts)
@@ -59,7 +57,6 @@ func main() {
 	}
 
 	g := gin.Default()
-	// g.Static("/image", "./upload")
 
 	g.Static("/css", "./public/css")
 	g.Static("/js", "./public/js")
@@ -72,7 +69,16 @@ func main() {
 	// g.HTMLRender = loadTemplates("public/html/mobile")
 
 	g.GET("/", pc.Index)
-	g.GET("/mobile/index", mobile.Index)
+	g.GET("/soft", pc.Soft)
+	g.GET("/game", pc.Game)
+	g.GET("/detail", pc.Detail)
+	g.GET("/news", pc.News)
+	g.GET("/news_detail", pc.NewsDetail)
+	g.GET("/hj", pc.Hj)
+	g.GET("/hj_detail", pc.HjDetail)
+	g.GET("/top", pc.Top)
+
+	// g.GET("/mobile/index", mobile.Index)
 
 	// 启动框架
 	srv := &http.Server{
