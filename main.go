@@ -66,6 +66,8 @@ func main() {
 	g.Static("/img", "./public/img")
 	g.Static("/image", "./public/upload")
 
+	g.StaticFile("/favicon.ico", "./public/favicon.ico")
+
 	g.HTMLRender = loadTemplates("public/html/pc")
 	// g.HTMLRender = loadTemplates("public/html/mobile")
 
