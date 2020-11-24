@@ -1,17 +1,21 @@
-{{define "content"}}
+{{ define "content" }}
 <div class="head-game-list">
   <div class="W1200 clear_">
     <ul class="hot-tj">
-    <li> <a target="_blank" href="/work/9159.html"> <img src="https://img.homevv.com/uploadimg/ico/2019/1112/1573525512780491.png" alt="腾讯加速器" /> <span>腾讯加速器</span> </a> </li>
-    <li> <a target="_blank" href="/soft/1151.html"> <img src="https://img.homevv.com/uploadimg/ico/2019/0404/1554348634644080.jpg" alt="大众点评" /> <span>大众点评</span> </a> </li>
-    <li> <a target="_blank" href="/leisure/8469.html"> <img src="https://img.homevv.com/uploadimg/ico/2019/1210/1575972012273953.png" alt="失落城堡" /> <span>失落城堡</span> </a> </li>
-    <li> <a target="_blank" href="/soft/1174.html"> <img src="https://img.homevv.com/uploadimg/ico/2019/0404/1554348691689465.png" alt="海报工厂" /> <span>海报工厂</span> </a> </li>
-    <li> <a target="_blank" href="/combat/10592/"> <img src="https://img.homevv.com/uploadimg/ico/2019/1206/1575605321379621.png" alt="进化之地" /> <span>进化之地</span> </a> </li>
-    <li> <a target="_blank" href="/soft/1224.html"> <img src="https://img.homevv.com/uploadimg/ico/2019/0404/1554348793386081.png" alt="酷我音乐" /> <span>酷我音乐</span> </a> </li>
-    <li> <a target="_blank" href="/adventure/10549.html"> <img src="https://img.homevv.com/uploadimg/ico/2019/1206/1575596238276551.png" alt="战双帕弥什" /> <span>战双帕弥什</span> </a> </li>
-    <li> <a target="_blank" href="/game/98.html"> <img src="https://img.homevv.com/uploadimg/ico/2020/0113/1578909141132283.png" alt="元气骑士" /> <span>元气骑士</span> </a> </li>
-    <li> <a target="_blank" href="/soft/122.html"> <img src="https://img.homevv.com/uploadimg/img/2018/0929/1538188808832.jpg" alt="迅雷" /> <span>迅雷</span> </a> </li>
-    <li> <a target="_blank" href="/soft/947.html"> <img src="https://img.homevv.com/uploadimg/ico/2018/0809/1533786707290643.png" alt="支付宝" /> <span>支付宝</span> </a> </li>
+      <li>
+        <a target="_blank" href="/detail/9159">
+          <img src="https://img.homevv.com/uploadimg/ico/2019/1112/1573525512780491.png" alt="腾讯加速器" />
+          <span>腾讯加速器</span>
+        </a>
+      </li>
+      {{ range .recommend }}
+      <li>
+        <a target="_blank" href="/detail/{{ .id }}">
+          <img src="{{ .img }}" alt="{{ .name }}" />
+          <span>{{ .name }}</span>
+        </a>
+      </li>
+      {{ end }}
     </ul>
   </div>
 </div>
@@ -22,21 +26,41 @@
         <div class="lb-prev"></div>
         <div class="lb-next"></div>
         <ul class="swiper-wrapper">
-          <li class="swiper-slide"> <a target="_blank" href="/work/9159.html"> <img src="https://img.homevv.com/uploadimg/ico/2019/1113/1573628721943961.png" alt="" /> <span>吃鸡首选加速器《腾讯加速器》</span> </a> </li>
-          <li class="swiper-slide"> <a target="_blank" href="/game/1880.html"> <img src="https://img.homevv.com/uploadimg/ico/2019/0510/1557458077275826.jpg" alt="" /> <span>腾讯首款AR探索手游《一起来捉妖》</span> </a> </li>
-          <li class="swiper-slide"> <a target="_blank" href="/game/3069.html"> <img src="https://img.homevv.com/uploadimg/ico/2019/0510/1557457485841012.jpg" alt="" /> <span>腾讯吃鸡手游《和平精英》今日公测</span> </a> </li>
+          <li class="swiper-slide">
+            <a target="_blank" href="/detail/9159">
+              <img src="https://img.homevv.com/uploadimg/ico/2019/1113/1573628721943961.png" alt="" />
+              <span>吃鸡首选加速器《腾讯加速器》</span>
+            </a>
+          </li>
+          {{ range .banner }}
+          <li class="swiper-slide">
+            <a target="_blank" href="/detail/{{ .id }}">
+              <img src="{{ .img }}" alt="{{ .title }}" />
+              <span>{{ .title }}</span>
+            </a>
+          </li>
+          {{ end }}
         </ul>
-        <div class="swiper-pagination page-style">
-          <span class="swiper-pagination-bullet"></span>
-          <span class="swiper-pagination-bullet"></span>
-          <span class="swiper-pagination-bullet"></span>
-        </div>
+        <!-- 生成轮播下面的点选小点 -->
+        <div class="swiper-pagination page-style"></div>
       </div>
       <div class="index-tit">
         <h4>热点资讯</h4>
       </div>
       <div class="news-img">
-        <a target="_blank" href="/news/170.html"> <img src="https://img.homevv.com/uploadimg/ico/2019/0605/1559728456211488.jpg" alt="" />
+        {{ $v := index .news 0 }}
+        {{ println $v }}
+        {{ println index .news 0 "id" }}
+
+        <a target="_blank" href="/news/{{ .v.id }}">
+          <img src="{{ .v.img }}" alt="{{ .v.title }}" />
+          <div class="news-img-box">
+            <span>{{ .v.title }}</span>
+            <p>{{ .v.desc }}</p>
+          </div>
+        </a>
+        <a target="_blank" href="/news/170.html">
+          <img src="https://img.homevv.com/uploadimg/ico/2019/0605/1559728456211488.jpg" alt="" />
           <div class="news-img-box">
             <span>微信信息发出去对方没收到</span>
             <p>微信作为大家常用的一款聊天软件，基本上大部分人都在用吧~而就在刚在，突然发生了一件奇怪的事！自己发出去的信息，也没有被拒收，明明发送成功了，可是对方却没有收到！？这是怎么回事！天呐撸，下面就让小编来为大家介绍一下吧！</p>
@@ -44,24 +68,35 @@
         </a>
       </div>
       <ul class="news-list">
+        {{ range $i, $_ := .news }}
+          {{ if gt $i 0 }}
+            <li> <a target="_blank" href="/news/{{ .id }}">{{ .title }}</a> <span>{{ .createdAt }}</span> </li>
+          {{ end }}
+        {{ end }}
         <li> <a target="_blank" href="/news/94.html">饥荒远古织影者怎么打</a> <span>2019-05-05</span> </li>
-        <li> <a target="_blank" href="/news/128.html">迷室3第二章图文攻略</a> <span>2019-05-27</span> </li>
-        <li> <a target="_blank" href="/news/217.html">塞尔之光装备获取攻略 品质分类</a> <span>2019-06-19</span> </li>
       </ul>
     </div>
     <div class="conta-center">
       <div class="mod-c-bao bao-jue">
         <em class="titmod-label">爆</em>
         <div class="tit-mod-r">
-        <a class="big-tit" target="_blank" href="/news/103.html"> <h5>《和平精英》公测礼包领取地址</h5> </a>
-        <a target="_blank" href="/news/71.html" class="small-tit">[2019抖音热门歌曲]</a>
+          {{ $v := index $v 0 0 }}
+          <a class="big-tit" target="_blank" href="/news/{{ $v.id }}.html"> <h5>{{ $v.title }}</h5> </a>
+          {{ $v := index $v 0 1 }}
+          <a target="_blank" href="/news/{{ $v.id }}" class="small-tit">[{{ $v.title }}]</a>
+          <a class="big-tit" target="_blank" href="/news/103.html"> <h5>《和平精英》公测礼包领取地址</h5> </a>
+          <a target="_blank" href="/news/71.html" class="small-tit">[2019抖音热门歌曲]</a>
         </div>
       </div>
       <div class="mod-c-jue bao-jue">
         <em class="titmod-label">新</em>
         <div class="tit-mod-r">
-        <a class="big-tit" target="_blank" href="/news/69.html"> <h5>抖音vlog详细拍摄教程 分分钟就能学会</h5> </a>
-        <a target="_blank" href="/news/104.html" class="small-tit">[和平精英信号值是什么]</a>
+          {{ $v := index $v 1 0 }}
+          <a class="big-tit" target="_blank" href="/news/{{ $v.id }}"> <h5>{{ $v.title }}</h5> </a>
+          {{ $v := index $v 1 1 }}
+          <a target="_blank" href="/news/{{ $v.id }}" class="small-tit">[{{ $v.title }}]</a>
+          <a class="big-tit" target="_blank" href="/news/69.html"> <h5>抖音vlog详细拍摄教程 分分钟就能学会</h5> </a>
+          <a target="_blank" href="/news/104.html" class="small-tit">[和平精英信号值是什么]</a>
         </div>
       </div>
       <div class="ifo_con1">
@@ -631,4 +666,4 @@
   </div>
 </div>
 </div>
-{{end}}
+{{ end }}

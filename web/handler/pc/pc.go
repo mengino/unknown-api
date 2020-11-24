@@ -7,10 +7,18 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
+type news struct {
+	id    int
+	title string
+	img   string
+	desc  string
+}
+
 // Index 首页
 func Index(c *gin.Context) {
 	response.HTML(c, http.StatusOK, "index.html", gin.H{
-		"nav": "index",
+		"nav":  "index",
+		"news": []news{{id: 1, title: "xx", img: "xx", desc: "xx"}},
 	})
 }
 
