@@ -285,6 +285,7 @@ body { min-width: 1200px; font-family: 'Microsoft YaHei','Arial','Heiti SC'; fon
 .footer .link{ width: 100%; float: left; text-align: center; font-size: 14px; color: #ccc; margin-top: 20px; line-height: 28px; }
 .footer .link a{ color: #ccc; margin: 0 12px; }
 .footer p{ text-align: center; line-height: 28px; font-size: 14px; color: #999; padding-top: 20px;}
+#jubao {cursor: pointer;}
 
 /*全部*/
 .label_wrap{ overflow: hidden; margin: 20px 0; }
