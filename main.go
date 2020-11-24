@@ -5,45 +5,18 @@ import (
 	"dlsite/app/router"
 	"dlsite/internal/config"
 	"dlsite/internal/db"
-	"dlsite/web/handler/pc"
 	"log"
 	"net/http"
 	"os"
 	"os/signal"
-	"path/filepath"
 	"strconv"
 	"time"
-
-	"github.com/gin-contrib/multitemplate"
 
 	"github.com/gin-gonic/gin"
 	_ "github.com/jinzhu/gorm/dialects/mysql"
 )
 
 var name = "dlsite"
-
-func loadTemplates(templatesDir string) multitemplate.Renderer {
-	r := multitemplate.NewRenderer()
-
-	layouts, err := filepath.Glob(templatesDir + "/layouts/*.html")
-	if err != nil {
-		panic(err.Error())
-	}
-
-	includes, err := filepath.Glob(templatesDir + "/includes/*.html")
-	if err != nil {
-		panic(err.Error())
-	}
-
-	for _, include := range includes {
-		layoutCopy := make([]string, len(layouts))
-		copy(layoutCopy, layouts)
-		files := append(layoutCopy, include)
-		r.AddFromFiles(filepath.Base(include), files...)
-	}
-
-	return r
-}
 
 func main() {
 	config.Init(name)
@@ -57,28 +30,6 @@ func main() {
 	}
 
 	g := gin.Default()
-
-	g.Static("/css", "./public/css")
-	g.Static("/js", "./public/js")
-	g.Static("/img", "./public/img")
-	g.Static("/image", "./public/upload")
-
-	g.StaticFile("/favicon.ico", "./public/favicon.ico")
-
-	g.HTMLRender = loadTemplates("public/html/pc")
-	// g.HTMLRender = loadTemplates("public/html/mobile")
-
-	g.GET("/", pc.Index)
-	g.GET("/soft", pc.Soft)
-	g.GET("/game", pc.Game)
-	g.GET("/detail", pc.Detail)
-	g.GET("/news", pc.News)
-	g.GET("/news_detail", pc.NewsDetail)
-	g.GET("/hj", pc.Hj)
-	g.GET("/hj_detail", pc.HjDetail)
-	g.GET("/top", pc.Top)
-
-	// g.GET("/mobile/index", mobile.Index)
 
 	// 启动框架
 	srv := &http.Server{
