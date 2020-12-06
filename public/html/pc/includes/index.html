@@ -49,31 +49,21 @@
       </div>
       <div class="news-img">
         {{ $v := index .news 0 }}
-        {{ println $v }}
-        {{ println index .news 0 "id" }}
-
-        <a target="_blank" href="/news/{{ .v.id }}">
-          <img src="{{ .v.img }}" alt="{{ .v.title }}" />
+        <a target="_blank" href="/news/{{ $v.ID }}">
+          <img src="{{ $v.Img }}" alt="{{ $v.Title }}" />
           <div class="news-img-box">
-            <span>{{ .v.title }}</span>
-            <p>{{ .v.desc }}</p>
-          </div>
-        </a>
-        <a target="_blank" href="/news/170.html">
-          <img src="https://img.homevv.com/uploadimg/ico/2019/0605/1559728456211488.jpg" alt="" />
-          <div class="news-img-box">
-            <span>微信信息发出去对方没收到</span>
-            <p>微信作为大家常用的一款聊天软件，基本上大部分人都在用吧~而就在刚在，突然发生了一件奇怪的事！自己发出去的信息，也没有被拒收，明明发送成功了，可是对方却没有收到！？这是怎么回事！天呐撸，下面就让小编来为大家介绍一下吧！</p>
+            <span>{{ $v.Title }}</span>
+            <p>{{ $v.Desc }}</p>
           </div>
         </a>
       </div>
       <ul class="news-list">
         {{ range $i, $_ := .news }}
           {{ if gt $i 0 }}
-            <li> <a target="_blank" href="/news/{{ .id }}">{{ .title }}</a> <span>{{ .createdAt }}</span> </li>
+            <li> <a target="_blank" href="/news/{{ .ID }}">{{ .Title }}</a> <span>{{ .CreatedAt }}</span> </li>
           {{ end }}
         {{ end }}
-        <li> <a target="_blank" href="/news/94.html">饥荒远古织影者怎么打</a> <span>2019-05-05</span> </li>
+        <!-- <li> <a target="_blank" href="/news/94.html">饥荒远古织影者怎么打</a> <span>2019-05-05</span> </li> -->
       </ul>
     </div>
     <div class="conta-center">
