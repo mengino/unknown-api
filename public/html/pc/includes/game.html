@@ -6,7 +6,7 @@
                 <span>游戏类型：</span>
                 <a class="on" href="/game/">全部游戏</a>
                 {{ range .category }}
-                <a  href="/game/{{ .ID }}.html" title="{{ .Title }}">{{ .Title }}</a>
+                <a  href="/game?category={{ .ID }}.html" title="{{ .Title }}">{{ .Title }}</a>
                 {{ end }}
             </p>
             <p>
@@ -27,12 +27,12 @@
                                 <img src="{{ .Image }}">
                             </a>
                             <p>
-                                <b>类型：<span>音乐舞蹈</span></b>
+                                <b>类型：<span>{{ .Category.Title }}</span></b>
                                 <b>版本：<span>{{ .Version }}</span></b>
-                                <u>浓浓的古典气息</u>
+                                <u>{{ .Desc }}</u>
                             </p>
                         </div>
-                        <h6><i>{{ .Size }}</i><em>{{ .CreateAt.Format "2006-01-02" }}</em></h6>
+                        <h6><i>{{ .Size }}</i><em>{{ .CreatedAt.Format "2006-01-02" }}</em></h6>
                     </li>
                 {{ end }}
             </ul>

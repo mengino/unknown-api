@@ -16,6 +16,7 @@ type news struct {
 	Total     int
 	CreatedAt time.Time
 }
+
 type category struct {
 	ID        int
 	Title     string
