@@ -5,286 +5,36 @@
             <p>
                 <span>游戏类型：</span>
                 <a class="on" href="/game/">全部游戏</a>
-                                                        <a  href="/game/4_1_1.html" title="角色扮演">角色扮演</a>
-                                                                            <a  href="/game/5_1_1.html" title="休闲益智">休闲益智</a>
-                                                                                                                    <a  href="/game/7_1_1.html" title="动作冒险">动作冒险</a>
-                                                                            <a  href="/game/8_1_1.html" title="解谜闯关">解谜闯关</a>
-                                                                            <a  href="/game/9_1_1.html" title="飞行射击">飞行射击</a>
-                                                                            <a  href="/game/10_1_1.html" title="策略塔防">策略塔防</a>
-                                                                            <a  href="/game/11_1_1.html" title="体育竞速">体育竞速</a>
-                                                                            <a  href="/game/12_1_1.html" title="模拟养成">模拟养成</a>
-                                                                            <a  href="/game/13_1_1.html" title="儿童教育">儿童教育</a>
-                                                                            <a  href="/game/14_1_1.html" title="音乐舞蹈">音乐舞蹈</a>
-                                                                            <a  href="/game/33_1_1.html" title="BT游戏">BT游戏</a>
-                                                    </p>
+                {{ range .category }}
+                <a  href="/game/{{ .ID }}.html" title="{{ .Title }}">{{ .Title }}</a>
+                {{ end }}
+            </p>
             <p>
                 <span>排序方式：</span>
-                                    <a href="/game/" class="on">最新</a>
-                                    <a href="/game/2_2_1.html" >热门</a>
+                <a href="/game/" class="on">最新</a>
+                <a href="/game/2_2_1.html" >热门</a>
             </p>
         </div>
         <div class="container-list">
             <ul class="clear_">
-                <li>
-                    <h4><a href="/cultivate/17873.html" title="钢琴师手游最新版" target="_blank">钢琴师手游最新版</a></h4>
-                    <div>
-                        <a href="/cultivate/17873.html" title="钢琴师手游最新版" target="_blank">
-                            <img src="https://img.homevv.com/uploadimg/ico/2020/1012/1602464494662633.png"></a>
-                        <p>
-                            <b>类型：<span>音乐舞蹈</span></b>
-                            <b>版本：<span>v2.2.3</span></b>
-                            <u>浓浓的古典气息</u>
-                        </p>
-                    </div>
-                    <h6><i>60.97MB</i><em>2020-10-12</em></h6>
-                </li>
-                <li>
-                    <h4><a href="/combat/17872/" title="钢琴师手游" target="_blank">钢琴师手游</a></h4>
-                    <div>
-                        <a href="/combat/17872/" title="钢琴师手游" target="_blank">
-                            <img src="https://img.homevv.com/uploadimg/ico/2020/1012/1602464494662633.png"></a>
-                        <p>
-                            <b>类型：<span>音乐舞蹈</span></b>
-                            <b>版本：<span>v2.2.3</span></b>
-                            <u>使人陶醉不已</u>
-                        </p>
-                    </div>
-                    <h6><i>60.97MB</i><em>2020-10-12</em></h6>
-                </li>
-                <li>
-                    <h4><a href="/strategy/17871.html" title="钢琴师" target="_blank">钢琴师</a></h4>
-                    <div>
-                        <a href="/strategy/17871.html" title="钢琴师" target="_blank">
-                            <img src="https://img.homevv.com/uploadimg/ico/2020/1012/1602464494662633.png"></a>
-                        <p>
-                            <b>类型：<span>音乐舞蹈</span></b>
-                            <b>版本：<span>v2.2.3</span></b>
-                            <u>低调奢华的操作</u>
-                        </p>
-                    </div>
-                    <h6><i>60.97MB</i><em>2020-10-12</em></h6>
-                </li>
-                <li>
-                    <h4><a href="/leisure/17861.html" title="原神公测版" target="_blank">原神公测版</a></h4>
-                    <div>
-                        <a href="/leisure/17861.html" title="原神公测版" target="_blank">
-                            <img src="https://img.homevv.com/uploadimg/ico/2019/0610/1560152811632012.png"></a>
-                        <p>
-                            <b>类型：<span>角色扮演</span></b>
-                            <b>版本：<span>v1.0.0_1112729_1135452</span></b>
-                            <u>各种特色冒险</u>
-                        </p>
-                    </div>
-                    <h6><i>136.4MB</i><em>2020-10-11</em></h6>
-                </li>
-                <li>
-                    <h4><a href="/alpinia/17860/" title="高能手办团无限幸运币版" target="_blank">高能手办团无限幸运币版</a></h4>
-                    <div>
-                        <a href="/alpinia/17860/" title="高能手办团无限幸运币版" target="_blank">
-                            <img src="https://img.homevv.com/uploadimg/ico/2020/0325/1585118152488006.png"></a>
-                        <p>
-                            <b>类型：<span>模拟养成</span></b>
-                            <b>版本：<span>v1.1.1029</span></b>
-                            <u>资深的手办收藏家</u>
-                        </p>
-                    </div>
-                    <h6><i>805.41MB</i><em>2020-10-11</em></h6>
-                </li>
-                <li>
-                    <h4><a href="/role/17859.html" title="高能手办团破解版" target="_blank">高能手办团破解版</a></h4>
-                    <div>
-                        <a href="/role/17859.html" title="高能手办团破解版" target="_blank">
-                            <img src="https://img.homevv.com/uploadimg/ico/2020/0325/1585118152488006.png"></a>
-                        <p>
-                            <b>类型：<span>模拟养成</span></b>
-                            <b>版本：<span>v1.1.1029</span></b>
-                            <u>写实二次元</u>
-                        </p>
-                    </div>
-                    <h6><i>805.41MB</i><em>2020-10-11</em></h6>
-                </li>
-                <li>
-                    <h4><a href="/alpinia/17870/" title="雷霆远征破解版" target="_blank">雷霆远征破解版</a></h4>
-                    <div>
-                        <a href="/alpinia/17870/" title="雷霆远征破解版" target="_blank">
-                            <img src="https://img.homevv.com/uploadimg/ico/2020/1010/1602295886268758.png"></a>
-                        <p>
-                            <b>类型：<span>策略塔防</span></b>
-                            <b>版本：<span>v0.6.0</span></b>
-                            <u>忠诚的星际远征</u>
-                        </p>
-                    </div>
-                    <h6><i>483.78MB</i><em>2020-10-10</em></h6>
-                </li>
-                <li>
-                    <h4><a href="/role/17869.html" title="雷霆远征手游测试服" target="_blank">雷霆远征手游测试服</a></h4>
-                    <div>
-                        <a href="/role/17869.html" title="雷霆远征手游测试服" target="_blank">
-                            <img src="https://img.homevv.com/uploadimg/ico/2020/1010/1602295886268758.png"></a>
-                        <p>
-                            <b>类型：<span>策略塔防</span></b>
-                            <b>版本：<span>v0.6.0</span></b>
-                            <u>组建舰队</u>
-                        </p>
-                    </div>
-                    <h6><i>483.78MB</i><em>2020-10-10</em></h6>
-                </li>
-                <li>
-                    <h4><a href="/flight/17868/" title="雷霆远征" target="_blank">雷霆远征</a></h4>
-                    <div>
-                        <a href="/flight/17868/" title="雷霆远征" target="_blank">
-                            <img src="https://img.homevv.com/uploadimg/ico/2020/1010/1602295886268758.png"></a>
-                        <p>
-                            <b>类型：<span>策略塔防</span></b>
-                            <b>版本：<span>v0.6.0</span></b>
-                            <u>上演星际丛林法则</u>
-                        </p>
-                    </div>
-                    <h6><i>483.78MB</i><em>2020-10-10</em></h6>
-                </li>
-                <li>
-                    <h4><a href="/shooting/17858/" title="战争怒吼公测版" target="_blank">战争怒吼公测版</a></h4>
-                    <div>
-                        <a href="/shooting/17858/" title="战争怒吼公测版" target="_blank">
-                            <img src="https://img.homevv.com/uploadimg/ico/2020/1009/1602209678185679.png"></a>
-                        <p>
-                            <b>类型：<span>策略塔防</span></b>
-                            <b>版本：<span>v1.6.0.23</span></b>
-                            <u>让你爽爆全场</u>
-                        </p>
-                    </div>
-                    <h6><i>931.77MB</i><em>2020-10-09</em></h6>
-                </li>
-                <li>
-                    <h4><a href="/adventure/17857.html" title="战争怒吼游戏" target="_blank">战争怒吼游戏</a></h4>
-                    <div>
-                        <a href="/adventure/17857.html" title="战争怒吼游戏" target="_blank">
-                            <img src="https://img.homevv.com/uploadimg/ico/2020/1009/1602209678185679.png"></a>
-                        <p>
-                            <b>类型：<span>策略塔防</span></b>
-                            <b>版本：<span>v1.6.0.23</span></b>
-                            <u>技术论英雄</u>
-                        </p>
-                    </div>
-                    <h6><i>931.77MB</i><em>2020-10-09</em></h6>
-                </li>
-                <li>
-                    <h4><a href="/adventure/17856/" title="战争怒吼" target="_blank">战争怒吼</a></h4>
-                    <div>
-                        <a href="/adventure/17856/" title="战争怒吼" target="_blank">
-                            <img src="https://img.homevv.com/uploadimg/ico/2020/1009/1602209678185679.png"></a>
-                        <p>
-                            <b>类型：<span>策略塔防</span></b>
-                            <b>版本：<span>v1.6.0.23</span></b>
-                            <u>策略对决</u>
-                        </p>
-                    </div>
-                    <h6><i>931.77MB</i><em>2020-10-09</em></h6>
-                </li>
-                <li>
-                    <h4><a href="/adventure/17851.html" title="幻书启世录网易测试服" target="_blank">幻书启世录网易测试服</a></h4>
-                    <div>
-                        <a href="/adventure/17851.html" title="幻书启世录网易测试服" target="_blank">
-                            <img src="https://img.homevv.com/uploadimg/ico/2020/0930/1601432597359116.png"></a>
-                        <p>
-                            <b>类型：<span>角色扮演</span></b>
-                            <b>版本：<span>v0.2.0</span></b>
-                            <u>次元突破</u>
-                        </p>
-                    </div>
-                    <h6><i>1924.74MB</i><em>2020-10-08</em></h6>
-                </li>
-                <li>
-                    <h4><a href="/adventure/17850/" title="幻书启世录最新版" target="_blank">幻书启世录最新版</a></h4>
-                    <div>
-                        <a href="/adventure/17850/" title="幻书启世录最新版" target="_blank">
-                            <img src="https://img.homevv.com/uploadimg/ico/2020/0930/1601432597359116.png"></a>
-                        <p>
-                            <b>类型：<span>角色扮演</span></b>
-                            <b>版本：<span>v0.2.0</span></b>
-                            <u>立体的策略表现</u>
-                        </p>
-                    </div>
-                    <h6><i>1924.74MB</i><em>2020-10-08</em></h6>
-                </li>
-                <li>
-                    <h4><a href="/cultivate/17848/" title="合他个ABC手机版" target="_blank">合他个ABC手机版</a></h4>
-                    <div>
-                        <a href="/cultivate/17848/" title="合他个ABC手机版" target="_blank">
-                            <img src="https://img.homevv.com/uploadimg/ico/2020/0930/1601431540563821.jpg"></a>
-                        <p>
-                            <b>类型：<span>休闲益智</span></b>
-                            <b>版本：<span>v1.0</span></b>
-                            <u>点击空的格子</u>
-                        </p>
-                    </div>
-                    <h6><i>25.51MB</i><em>2020-10-08</em></h6>
-                </li>
-                <li>
-                    <h4><a href="/cultivate/17841.html" title="单机刷刷刷广告破解版" target="_blank">单机刷刷刷广告破解版</a></h4>
-                    <div>
-                        <a href="/cultivate/17841.html" title="单机刷刷刷广告破解版" target="_blank">
-                            <img src="https://img.homevv.com/uploadimg/ico/2020/0929/1601342096314773.png"></a>
-                        <p>
-                            <b>类型：<span>休闲益智</span></b>
-                            <b>版本：<span>v2.0.0</span></b>
-                            <u>噗噗噗冒金币</u>
-                        </p>
-                    </div>
-                    <h6><i>38.13MB</i><em>2020-10-07</em></h6>
-                </li>
-                <li>
-                    <h4><a href="/flight/17840/" title="单机刷刷刷免广告版" target="_blank">单机刷刷刷免广告版</a></h4>
-                    <div>
-                        <a href="/flight/17840/" title="单机刷刷刷免广告版" target="_blank">
-                            <img src="https://img.homevv.com/uploadimg/ico/2020/0929/1601342096314773.png"></a>
-                        <p>
-                            <b>类型：<span>休闲益智</span></b>
-                            <b>版本：<span>v2.0.0</span></b>
-                            <u>真的不需要操作</u>
-                        </p>
-                    </div>
-                    <h6><i>38.13MB</i><em>2020-10-07</em></h6>
-                </li>
-                <li>
-                    <h4><a href="/role/17839.html" title="单机刷刷刷无限钻石版" target="_blank">单机刷刷刷无限钻石版</a></h4>
-                    <div>
-                        <a href="/role/17839.html" title="单机刷刷刷无限钻石版" target="_blank">
-                            <img src="https://img.homevv.com/uploadimg/ico/2020/0929/1601342096314773.png"></a>
-                        <p>
-                            <b>类型：<span>休闲益智</span></b>
-                            <b>版本：<span>v2.0.0</span></b>
-                            <u>去组合技能</u>
-                        </p>
-                    </div>
-                    <h6><i>38.13MB</i><em>2020-10-07</em></h6>
-                </li>
-                <li>
-                    <h4><a href="/leisure/17831.html" title="七勇者与魔王城无限生命修改版" target="_blank">七勇者与魔王城无限生命修改版</a></h4>
-                    <div>
-                        <a href="/leisure/17831.html" title="七勇者与魔王城无限生命修改版" target="_blank">
-                            <img src="https://img.homevv.com/uploadimg/ico/2020/0923/1600830638531166.png"></a>
-                        <p>
-                            <b>类型：<span>策略塔防</span></b>
-                            <b>版本：<span>v1.6.5</span></b>
-                            <u>让闲散时光更有趣</u>
-                        </p>
-                    </div>
-                    <h6><i>75.26MB</i><em>2020-10-06</em></h6>
-                </li>
-                <li>
-                    <h4><a href="/flight/17830/" title="零界之痕测试服" target="_blank">零界之痕测试服</a></h4>
-                    <div>
-                        <a href="/flight/17830/" title="零界之痕测试服" target="_blank">
-                            <img src="https://img.homevv.com/uploadimg/ico/2020/0924/1600909792657887.png"></a>
-                        <p>
-                            <b>类型：<span>角色扮演</span></b>
-                            <b>版本：<span>v1.109169.8361</span></b>
-                            <u>奋战拯救世界</u>
-                        </p>
-                    </div>
-                    <h6><i>1950.56MB</i><em>2020-10-06</em></h6>
-                </li>
+                {{ range .list }}
+                    <li>
+                        <h4>
+                            <a href="/cultivate/{{ .ID }}.html" title="{{ .Title }}" target="_blank">{{ .Title }}</a>
+                        </h4>
+                        <div>
+                            <a href="/cultivate/{{ .ID }}.html" title="{{ .Title }}" target="_blank">
+                                <img src="{{ .Image }}">
+                            </a>
+                            <p>
+                                <b>类型：<span>音乐舞蹈</span></b>
+                                <b>版本：<span>{{ .Version }}</span></b>
+                                <u>浓浓的古典气息</u>
+                            </p>
+                        </div>
+                        <h6><i>{{ .Size }}</i><em>{{ .CreateAt.Format "2006-01-02" }}</em></h6>
+                    </li>
+                {{ end }}
             </ul>
         </div>
         <!-- 分页 -->
