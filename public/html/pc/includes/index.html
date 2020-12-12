@@ -301,7 +301,18 @@
     </div>
     <div class="down_right" id="down_right">
       <ul>
-        <li>
+        {{ range .news }}
+          <li>
+            <a target="_blank" href="/detail/{{ .ID }}/">
+              <span></span>
+              <img src="{{ .Image }}" alt="{{ .Title }}" />
+            </a>
+            <div>
+              <a target="_blank" href="/detail/{{ .ID }}/">{{ .Title }} </a>
+            </div>
+          </li>
+        {{ end }}
+        <!-- <li>
           <a target="_blank" href="/shot/17878/">
             <span></span>
             <img src="https://img.homevv.com/uploadimg/ico/2020/1012/1602472032451659.png" alt="趣智校园app" />
@@ -309,75 +320,7 @@
           <div>
             <a target="_blank" href="/shot/17878/">趣智校园app </a>
           </div>
-        </li>
-        <li> <a target="_blank" href="/shot/17877.html"> <span></span> <img src="https://img.homevv.com/uploadimg/ico/2020/1012/1602472032451659.png" alt="趣智校园" /> </a>
-        <div>
-          <a target="_blank" href="/shot/17877.html">趣智校园 </a>
-        </div> </li>
-        <li> <a target="_blank" href="/work/17867.html"> <span></span> <img src="https://img.homevv.com/uploadimg/ico/2020/1010/1602294863503807.png" alt="料理笔记app" /> </a>
-        <div>
-          <a target="_blank" href="/work/17867.html">料理笔记app </a>
-        </div> </li>
-        <li> <a target="_blank" href="/shot/17866/"> <span></span> <img src="https://img.homevv.com/uploadimg/ico/2020/1010/1602294863503807.png" alt="料理笔记" /> </a>
-        <div>
-          <a target="_blank" href="/shot/17866/">料理笔记 </a>
-        </div> </li>
-        <li> <a target="_blank" href="/shot/17863.html"> <span></span> <img src="https://img.homevv.com/uploadimg/ico/2020/1009/1602212777514421.png" alt="兼客兼职软件" /> </a>
-        <div>
-          <a target="_blank" href="/shot/17863.html">兼客兼职软件 </a>
-        </div> </li>
-        <li> <a target="_blank" href="/video/17862/"> <span></span> <img src="https://img.homevv.com/uploadimg/ico/2020/1009/1602212777514421.png" alt="兼客兼职" /> </a>
-        <div>
-          <a target="_blank" href="/video/17862/">兼客兼职 </a>
-        </div> </li>
-        <li> <a target="_blank" href="/social/17855.html"> <span></span> <img src="https://img.homevv.com/uploadimg/ico/2018/0927/1538039422867771.png" alt="蘑菇街安卓旧版本" /> </a>
-        <div>
-          <a target="_blank" href="/social/17855.html">蘑菇街安卓旧版本 </a>
-        </div> </li>
-        <li> <a target="_blank" href="/work/17854/"> <span></span> <img src="https://img.homevv.com/uploadimg/ico/2020/0930/1601433680144473.png" alt="萤火虫视频软件" /> </a>
-        <div>
-          <a target="_blank" href="/work/17854/">萤火虫视频软件 </a>
-        </div> </li>
-        <li> <a target="_blank" href="/read/17845.html"> <span></span> <img src="https://img.homevv.com/uploadimg/ico/2020/0929/1601344143956670.png" alt="睡眠精灵手机版" /> </a>
-        <div>
-          <a target="_blank" href="/read/17845.html">睡眠精灵手机版 </a>
-        </div> </li>
-        <li> <a target="_blank" href="/work/17844/"> <span></span> <img src="https://img.homevv.com/uploadimg/ico/2020/0929/1601344143956670.png" alt="睡眠精灵app破解版" /> </a>
-        <div>
-          <a target="_blank" href="/work/17844/">睡眠精灵app破解版 </a>
-        </div> </li>
-        <li> <a target="_blank" href="/social/17835.html"> <span></span> <img src="https://img.homevv.com/uploadimg/ico/2019/0517/1558079143326031.png" alt="天眼查app新版" /> </a>
-        <div>
-          <a target="_blank" href="/social/17835.html">天眼查app新版 </a>
-        </div> </li>
-        <li> <a target="_blank" href="/social/17834/"> <span></span> <img src="https://img.homevv.com/uploadimg/ico/2018/0927/1538039422867771.png" alt="蘑菇街客户端" /> </a>
-        <div>
-          <a target="_blank" href="/social/17834/">蘑菇街客户端 </a>
-        </div> </li>
-        <li> <a target="_blank" href="/video/17825.html"> <span></span> <img src="https://img.homevv.com/uploadimg/ico/2020/0927/1601175487978190.png" alt="浙江新闻手机客户端" /> </a>
-        <div>
-          <a target="_blank" href="/video/17825.html">浙江新闻手机客户端 </a>
-        </div> </li>
-        <li> <a target="_blank" href="/social/17824/"> <span></span> <img src="https://img.homevv.com/uploadimg/ico/2020/0927/1601175487978190.png" alt="浙江新闻软件" /> </a>
-        <div>
-          <a target="_blank" href="/social/17824/">浙江新闻软件 </a>
-        </div> </li>
-        <li> <a target="_blank" href="/read/17815.html"> <span></span> <img src="https://img.homevv.com/uploadimg/ico/2020/0925/1601003672291816.png" alt="果识学堂软件" /> </a>
-        <div>
-          <a target="_blank" href="/read/17815.html">果识学堂软件 </a>
-        </div> </li>
-        <li> <a target="_blank" href="/work/17814/"> <span></span> <img src="https://img.homevv.com/uploadimg/ico/2020/0917/1600309104268709.png" alt="美人天气手机版" /> </a>
-        <div>
-          <a target="_blank" href="/work/17814/">美人天气手机版 </a>
-        </div> </li>
-        <li> <a target="_blank" href="/shot/17805.html"> <span></span> <img src="https://img.homevv.com/uploadimg/ico/2019/0517/1558079143326031.png" alt="天眼查软件" /> </a>
-        <div>
-          <a target="_blank" href="/shot/17805.html">天眼查软件 </a>
-        </div> </li>
-        <li> <a target="_blank" href="/shot/17804/"> <span></span> <img src="https://img.homevv.com/uploadimg/ico/2020/0924/1600911349564496.png" alt="海马兼职手机软件" /> </a>
-        <div>
-          <a target="_blank" href="/shot/17804/">海马兼职手机软件 </a>
-        </div> </li>
+        </li> -->
       </ul>
     </div>
   </div>
@@ -396,46 +339,20 @@
   </div>
   <div class="game_top_app">
     <ul>
-    <li class="on"> <i class="n1">1</i>
-      <s>
-      生活休闲
-      </s> <a href="/shot/17878/" class="img"> <img class="app_img" src="https://img.homevv.com/uploadimg/ico/2020/1012/1602472032451659.png" /></a> <p> <a href="/shot/17878/">趣智校园app</a> </p> <span>生活休闲</span> <em><a href="/shot/17878/">下载</a></em> </li>
-    <li> <i class="n2">2</i>
-      <s>
-      生活休闲
-      </s> <a href="/shot/17877.html" class="img"> <img class="app_img" src="https://img.homevv.com/uploadimg/ico/2020/1012/1602472032451659.png" /></a> <p> <a href="/shot/17877.html">趣智校园</a> </p> <span>生活休闲</span> <em><a href="/shot/17877.html">下载</a></em> </li>
-    <li> <i class="n3">3</i>
-      <s>
-      音乐舞蹈
-      </s> <a href="/cultivate/17873.html" class="img"> <img class="app_img" src="https://img.homevv.com/uploadimg/ico/2020/1012/1602464494662633.png" /></a> <p> <a href="/cultivate/17873.html">钢琴师手游最新版</a> </p> <span>音乐舞蹈</span> <em><a href="/cultivate/17873.html">下载</a></em> </li>
-    <li> <i class="n4">4</i>
-      <s>
-      音乐舞蹈
-      </s> <a href="/combat/17872/" class="img"> <img class="app_img" src="https://img.homevv.com/uploadimg/ico/2020/1012/1602464494662633.png" /></a> <p> <a href="/combat/17872/">钢琴师手游</a> </p> <span>音乐舞蹈</span> <em><a href="/combat/17872/">下载</a></em> </li>
-    <li> <i>5</i>
-      <s>
-      音乐舞蹈
-      </s> <a href="/strategy/17871.html" class="img"> <img class="app_img" src="https://img.homevv.com/uploadimg/ico/2020/1012/1602464494662633.png" /></a> <p> <a href="/strategy/17871.html">钢琴师</a> </p> <span>音乐舞蹈</span> <em><a href="/strategy/17871.html">下载</a></em> </li>
-    <li> <i>6</i>
-      <s>
-      策略塔防
-      </s> <a href="/alpinia/17870/" class="img"> <img class="app_img" src="https://img.homevv.com/uploadimg/ico/2020/1010/1602295886268758.png" /></a> <p> <a href="/alpinia/17870/">雷霆远征破解版</a> </p> <span>策略塔防</span> <em><a href="/alpinia/17870/">下载</a></em> </li>
-    <li> <i>7</i>
-      <s>
-      策略塔防
-      </s> <a href="/role/17869.html" class="img"> <img class="app_img" src="https://img.homevv.com/uploadimg/ico/2020/1010/1602295886268758.png" /></a> <p> <a href="/role/17869.html">雷霆远征手游测试服</a> </p> <span>策略塔防</span> <em><a href="/role/17869.html">下载</a></em> </li>
-    <li> <i>8</i>
-      <s>
-      策略塔防
-      </s> <a href="/flight/17868/" class="img"> <img class="app_img" src="https://img.homevv.com/uploadimg/ico/2020/1010/1602295886268758.png" /></a> <p> <a href="/flight/17868/">雷霆远征</a> </p> <span>策略塔防</span> <em><a href="/flight/17868/">下载</a></em> </li>
-    <li> <i>9</i>
-      <s>
-      生活休闲
-      </s> <a href="/work/17867.html" class="img"> <img class="app_img" src="https://img.homevv.com/uploadimg/ico/2020/1010/1602294863503807.png" /></a> <p> <a href="/work/17867.html">料理笔记app</a> </p> <span>生活休闲</span> <em><a href="/work/17867.html">下载</a></em> </li>
-    <li> <i>10</i>
-      <s>
-      生活休闲
-      </s> <a href="/shot/17866/" class="img"> <img class="app_img" src="https://img.homevv.com/uploadimg/ico/2020/1010/1602294863503807.png" /></a> <p> <a href="/shot/17866/">料理笔记</a> </p> <span>生活休闲</span> <em><a href="/shot/17866/">下载</a></em> </li>
+      {{ range $k, $_ := .news }}
+        <li {{if eq $k 0}} class="on" {{ end }}>
+          <i {{if lt $k 4 }} class="n{{ add $k }}" {{ end }}>{{ add $k }}</i>
+          <s>生活休闲</s>
+          <a href="/shot/{{ .ID }}/" class="img">
+            <img class="app_img" src="{{ .Image }}" />
+          </a>
+          <p>
+            <a href="/shot/{{ .ID }}/">{{ .Title }}</a>
+          </p>
+          <span>生活休闲</span>
+          <em><a href="/shot/{{ .ID }}/">下载</a></em>
+        </li>
+      {{ end }}
     </ul>
   </div>
   </div>
@@ -445,46 +362,20 @@
   </div>
   <div class="game_top_app">
     <ul>
-    <li class="on"> <i class="n1">1</i>
-      <s>
-      休闲益智
-      </s> <a href="/cultivate/17848/" class="img"> <img class="app_img" src="https://img.homevv.com/uploadimg/ico/2020/0930/1601431540563821.jpg" /></a> <p> <a href="/cultivate/17848/">合他个ABC手机版</a> </p> <span>休闲益智</span> <em><a href="/cultivate/17848/">下载</a></em> </li>
-    <li> <i class="n2">2</i>
-      <s>
-      休闲益智
-      </s> <a href="/adventure/17847.html" class="img"> <img class="app_img" src="https://img.homevv.com/uploadimg/ico/2020/0930/1601431540563821.jpg" /></a> <p> <a href="/adventure/17847.html">合他个ABC游戏</a> </p> <span>休闲益智</span> <em><a href="/adventure/17847.html">下载</a></em> </li>
-    <li> <i class="n3">3</i>
-      <s>
-      休闲益智
-      </s> <a href="/alpinia/17846/" class="img"> <img class="app_img" src="https://img.homevv.com/uploadimg/ico/2020/0930/1601431540563821.jpg" /></a> <p> <a href="/alpinia/17846/">合他个ABC</a> </p> <span>休闲益智</span> <em><a href="/alpinia/17846/">下载</a></em> </li>
-    <li> <i class="n4">4</i>
-      <s>
-      休闲益智
-      </s> <a href="/cultivate/17841.html" class="img"> <img class="app_img" src="https://img.homevv.com/uploadimg/ico/2020/0929/1601342096314773.png" /></a> <p> <a href="/cultivate/17841.html">单机刷刷刷广告破解版</a> </p> <span>休闲益智</span> <em><a href="/cultivate/17841.html">下载</a></em> </li>
-    <li> <i>5</i>
-      <s>
-      休闲益智
-      </s> <a href="/flight/17840/" class="img"> <img class="app_img" src="https://img.homevv.com/uploadimg/ico/2020/0929/1601342096314773.png" /></a> <p> <a href="/flight/17840/">单机刷刷刷免广告版</a> </p> <span>休闲益智</span> <em><a href="/flight/17840/">下载</a></em> </li>
-    <li> <i>6</i>
-      <s>
-      休闲益智
-      </s> <a href="/role/17839.html" class="img"> <img class="app_img" src="https://img.homevv.com/uploadimg/ico/2020/0929/1601342096314773.png" /></a> <p> <a href="/role/17839.html">单机刷刷刷无限钻石版</a> </p> <span>休闲益智</span> <em><a href="/role/17839.html">下载</a></em> </li>
-    <li> <i>7</i>
-      <s>
-      休闲益智
-      </s> <a href="/leisure/17838/" class="img"> <img class="app_img" src="https://img.homevv.com/uploadimg/ico/2020/0929/1601342096314773.png" /></a> <p> <a href="/leisure/17838/">单机刷刷刷破解版</a> </p> <span>休闲益智</span> <em><a href="/leisure/17838/">下载</a></em> </li>
-    <li> <i>8</i>
-      <s>
-      休闲益智
-      </s> <a href="/shooting/17837.html" class="img"> <img class="app_img" src="https://img.homevv.com/uploadimg/ico/2020/0929/1601342096314773.png" /></a> <p> <a href="/shooting/17837.html">单机刷刷刷手游</a> </p> <span>休闲益智</span> <em><a href="/shooting/17837.html">下载</a></em> </li>
-    <li> <i>9</i>
-      <s>
-      休闲益智
-      </s> <a href="/alpinia/17836/" class="img"> <img class="app_img" src="https://img.homevv.com/uploadimg/ico/2020/0929/1601342096314773.png" /></a> <p> <a href="/alpinia/17836/">单机刷刷刷</a> </p> <span>休闲益智</span> <em><a href="/alpinia/17836/">下载</a></em> </li>
-    <li> <i>10</i>
-      <s>
-      策略塔防
-      </s> <a href="/leisure/17831.html" class="img"> <img class="app_img" src="https://img.homevv.com/uploadimg/ico/2020/0923/1600830638531166.png" /></a> <p> <a href="/leisure/17831.html">七勇者与魔王城无限生命修改版</a> </p> <span>策略塔防</span> <em><a href="/leisure/17831.html">下载</a></em> </li>
+      {{ range $k, $_ := .news }}
+        <li {{if eq $k 0}} class="on" {{ end }}>
+          <i {{if lt $k 4 }} class="n{{ add $k }}" {{ end }}>{{ add $k }}</i>
+          <s>生活休闲</s>
+          <a href="/shot/{{ .ID }}/" class="img">
+            <img class="app_img" src="{{ .Image }}" />
+          </a>
+          <p>
+            <a href="/shot/{{ .ID }}/">{{ .Title }}</a>
+          </p>
+          <span>生活休闲</span>
+          <em><a href="/shot/{{ .ID }}/">下载</a></em>
+        </li>
+      {{ end }}
     </ul>
   </div>
   </div>
@@ -494,46 +385,20 @@
   </div>
   <div class="game_top_app">
     <ul>
-    <li class="on"> <i class="n1">1</i>
-      <s>
-      音乐舞蹈
-      </s> <a href="/cultivate/17873.html" class="img"> <img class="app_img" src="https://img.homevv.com/uploadimg/ico/2020/1012/1602464494662633.png" /></a> <p> <a href="/cultivate/17873.html">钢琴师手游最新版</a> </p> <span>音乐舞蹈</span> <em><a href="/cultivate/17873.html">下载</a></em> </li>
-    <li> <i class="n2">2</i>
-      <s>
-      音乐舞蹈
-      </s> <a href="/combat/17872/" class="img"> <img class="app_img" src="https://img.homevv.com/uploadimg/ico/2020/1012/1602464494662633.png" /></a> <p> <a href="/combat/17872/">钢琴师手游</a> </p> <span>音乐舞蹈</span> <em><a href="/combat/17872/">下载</a></em> </li>
-    <li> <i class="n3">3</i>
-      <s>
-      音乐舞蹈
-      </s> <a href="/strategy/17871.html" class="img"> <img class="app_img" src="https://img.homevv.com/uploadimg/ico/2020/1012/1602464494662633.png" /></a> <p> <a href="/strategy/17871.html">钢琴师</a> </p> <span>音乐舞蹈</span> <em><a href="/strategy/17871.html">下载</a></em> </li>
-    <li> <i class="n4">4</i>
-      <s>
-      策略塔防
-      </s> <a href="/alpinia/17870/" class="img"> <img class="app_img" src="https://img.homevv.com/uploadimg/ico/2020/1010/1602295886268758.png" /></a> <p> <a href="/alpinia/17870/">雷霆远征破解版</a> </p> <span>策略塔防</span> <em><a href="/alpinia/17870/">下载</a></em> </li>
-    <li> <i>5</i>
-      <s>
-      策略塔防
-      </s> <a href="/role/17869.html" class="img"> <img class="app_img" src="https://img.homevv.com/uploadimg/ico/2020/1010/1602295886268758.png" /></a> <p> <a href="/role/17869.html">雷霆远征手游测试服</a> </p> <span>策略塔防</span> <em><a href="/role/17869.html">下载</a></em> </li>
-    <li> <i>6</i>
-      <s>
-      策略塔防
-      </s> <a href="/flight/17868/" class="img"> <img class="app_img" src="https://img.homevv.com/uploadimg/ico/2020/1010/1602295886268758.png" /></a> <p> <a href="/flight/17868/">雷霆远征</a> </p> <span>策略塔防</span> <em><a href="/flight/17868/">下载</a></em> </li>
-    <li> <i>7</i>
-      <s>
-      角色扮演
-      </s> <a href="/leisure/17861.html" class="img"> <img class="app_img" src="https://img.homevv.com/uploadimg/ico/2019/0610/1560152811632012.png" /></a> <p> <a href="/leisure/17861.html">原神公测版</a> </p> <span>角色扮演</span> <em><a href="/leisure/17861.html">下载</a></em> </li>
-    <li> <i>8</i>
-      <s>
-      模拟养成
-      </s> <a href="/alpinia/17860/" class="img"> <img class="app_img" src="https://img.homevv.com/uploadimg/ico/2020/0325/1585118152488006.png" /></a> <p> <a href="/alpinia/17860/">高能手办团无限幸运币版</a> </p> <span>模拟养成</span> <em><a href="/alpinia/17860/">下载</a></em> </li>
-    <li> <i>9</i>
-      <s>
-      模拟养成
-      </s> <a href="/role/17859.html" class="img"> <img class="app_img" src="https://img.homevv.com/uploadimg/ico/2020/0325/1585118152488006.png" /></a> <p> <a href="/role/17859.html">高能手办团破解版</a> </p> <span>模拟养成</span> <em><a href="/role/17859.html">下载</a></em> </li>
-    <li> <i>10</i>
-      <s>
-      策略塔防
-      </s> <a href="/shooting/17858/" class="img"> <img class="app_img" src="https://img.homevv.com/uploadimg/ico/2020/1009/1602209678185679.png" /></a> <p> <a href="/shooting/17858/">战争怒吼公测版</a> </p> <span>策略塔防</span> <em><a href="/shooting/17858/">下载</a></em> </li>
+      {{ range $k, $_ := .news }}
+        <li {{if eq $k 0}} class="on" {{ end }}>
+          <i {{if lt $k 4 }} class="n{{ add $k }}" {{ end }}>{{ add $k }}</i>
+          <s>生活休闲</s>
+          <a href="/shot/{{ .ID }}/" class="img">
+            <img class="app_img" src="{{ .Image }}" />
+          </a>
+          <p>
+            <a href="/shot/{{ .ID }}/">{{ .Title }}</a>
+          </p>
+          <span>生活休闲</span>
+          <em><a href="/shot/{{ .ID }}/">下载</a></em>
+        </li>
+      {{ end }}
     </ul>
   </div>
   </div>
@@ -543,46 +408,20 @@
   </div>
   <div class="game_top_app">
     <ul>
-    <li class="on"> <i class="n1">1</i>
-      <s>
-      影音播放
-      </s> <a href="/soft/93.html" class="img"> <img class="app_img" src="https://img.homevv.com/uploadimg/ico/2018/0809/1533808804112779.png" /></a> <p> <a href="/soft/93.html">网易云音乐</a> </p> <span>影音播放</span> <em><a href="/soft/93.html">下载</a></em> </li>
-    <li> <i class="n2">2</i>
-      <s>
-      资讯阅读
-      </s> <a href="/soft/215.html" class="img"> <img class="app_img" src="https://img.homevv.com/uploadimg/ico/2018/0907/1536310805183309.png" /></a> <p> <a href="/soft/215.html">搜狐新闻最新版</a> </p> <span>资讯阅读</span> <em><a href="/soft/215.html">下载</a></em> </li>
-    <li> <i class="n3">3</i>
-      <s>
-      游戏辅助
-      </s> <a href="/soft/1148.html" class="img"> <img class="app_img" src="https://img.homevv.com/uploadimg/ico/2019/0319/1552975496491712.png" /></a> <p> <a href="/soft/1148.html">明日之后助手</a> </p> <span>游戏辅助</span> <em><a href="/soft/1148.html">下载</a></em> </li>
-    <li> <i class="n4">4</i>
-      <s>
-      社交通讯
-      </s> <a href="/soft/1149.html" class="img"> <img class="app_img" src="https://img.homevv.com/uploadimg/ico/2019/0319/1552975622862896.png" /></a> <p> <a href="/soft/1149.html">QQ空间</a> </p> <span>社交通讯</span> <em><a href="/soft/1149.html">下载</a></em> </li>
-    <li> <i>5</i>
-      <s>
-      游戏辅助
-      </s> <a href="/soft/1150.html" class="img"> <img class="app_img" src="https://img.homevv.com/uploadimg/ico/2019/0319/1552975710732961.png" /></a> <p> <a href="/soft/1150.html">Dota电竞</a> </p> <span>游戏辅助</span> <em><a href="/soft/1150.html">下载</a></em> </li>
-    <li> <i>6</i>
-      <s>
-      生活休闲
-      </s> <a href="/soft/1151.html" class="img"> <img class="app_img" src="https://img.homevv.com/uploadimg/ico/2019/0319/1552975892858555.jpg" /></a> <p> <a href="/soft/1151.html">大众点评</a> </p> <span>生活休闲</span> <em><a href="/soft/1151.html">下载</a></em> </li>
-    <li> <i>7</i>
-      <s>
-      社交通讯
-      </s> <a href="/soft/1157.html" class="img"> <img class="app_img" src="https://img.homevv.com/uploadimg/ico/2019/0319/1552976907696017.png" /></a> <p> <a href="/soft/1157.html">聚光塔</a> </p> <span>社交通讯</span> <em><a href="/soft/1157.html">下载</a></em> </li>
-    <li> <i>8</i>
-      <s>
-      购物理财
-      </s> <a href="/soft/1158.html" class="img"> <img class="app_img" src="https://img.homevv.com/uploadimg/ico/2019/0319/1552977072173023.png" /></a> <p> <a href="/soft/1158.html">百度糯米</a> </p> <span>购物理财</span> <em><a href="/soft/1158.html">下载</a></em> </li>
-    <li> <i>9</i>
-      <s>
-      资讯阅读
-      </s> <a href="/soft/1161.html" class="img"> <img class="app_img" src="https://img.homevv.com/uploadimg/ico/2019/0319/1552977575772879.png" /></a> <p> <a href="/soft/1161.html">Weico</a> </p> <span>资讯阅读</span> <em><a href="/soft/1161.html">下载</a></em> </li>
-    <li> <i>10</i>
-      <s>
-      学习办公
-      </s> <a href="/soft/1163.html" class="img"> <img class="app_img" src="https://img.homevv.com/uploadimg/ico/2019/0319/1552977721587276.png" /></a> <p> <a href="/soft/1163.html">白描</a> </p> <span>学习办公</span> <em><a href="/soft/1163.html">下载</a></em> </li>
+      {{ range $k, $_ := .news }}
+        <li {{if eq $k 0}} class="on" {{ end }}>
+          <i {{if lt $k 4 }} class="n{{ add $k }}" {{ end }}>{{ add $k }}</i>
+          <s>生活休闲</s>
+          <a href="/shot/{{ .ID }}/" class="img">
+            <img class="app_img" src="{{ .Image }}" />
+          </a>
+          <p>
+            <a href="/shot/{{ .ID }}/">{{ .Title }}</a>
+          </p>
+          <span>生活休闲</span>
+          <em><a href="/shot/{{ .ID }}/">下载</a></em>
+        </li>
+      {{ end }}
     </ul>
   </div>
   </div>
