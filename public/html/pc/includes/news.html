@@ -6,175 +6,33 @@
         <div class="container-left">
             <div class="label_wrap">
                 <a href="/news/" class="on">全部</a>
-                    <a href="/news/list_29_1.html" >新闻资讯</a>
-                    <a href="/news/list_30_1.html" >游戏攻略</a>
-                    <a href="/news/list_31_1.html" >软件教程</a>
-                    <a href="/news/list_32_1.html" >活动大全</a>
+                {{ range .category }}
+                    <a href="/news?category={{ .ID }}.html">{{ .Title }}</a>
+                {{ end }}
                 </div>
             <!--新闻列表-->
             <div class="r-list">
                 <ul class="m_heart">
-                    <li>
-                        <a class="m_heart_img" href="/news/357.html" target="_blank">
-                            <img src="https://img.homevv.com/uploadimg/ico/2020/0706/1594010429570393.jpg" alt="">
-                        </a>
-                        <div class="m_heart_tit">
-                            <h3><a href="/news/357.html" target="_blank">奴隶少女希尔薇所有结局攻略<i></i></a>
-                            </h3>
-                            <a class="m_heart_read" href="/news/357.html" target="_blank">阅读全文</a>
-                            <p class="m_heat_p">
-                                奴隶少女希尔薇是一款拥有独特故事和韵味的角色模拟养成游戏，玩家可以探索到很丰富的故事线路和经营元素，不同的结局故事能带来不同的感触，下面为大家整理的是有关所有结局的攻略，有兴趣的可以提前浏览一番。……</p>
-                            <div class="m_heart_time">
-                                <span class="m_heart_time_span1"><i></i>2020/07/06</span>
-                                <span class="m_heart_time_span2"><i></i>0</span>
+                    {{ range .news }}
+                        <li>
+                            <a class="m_heart_img" href="/news/{{ .ID }}.html" target="_blank">
+                                <img src="{{ .Image }}" alt="">
+                            </a>
+                            <div class="m_heart_tit">
+                                <h3><a href="/news/{{ .ID }}.html" target="_blank">{{ .Title }}<i></i></a>
+                                </h3>
+                                <a class="m_heart_read" href="/news/{{ .ID }}.html" target="_blank">阅读全文</a>
+                                <p class="m_heat_p">
+                                    {{ .Desc }}
+                                </p>
+                                <div class="m_heart_time">
+                                    <span class="m_heart_time_span1"><i></i>{{ .CreatedAt.Format "2006-01-02" }}</span>
+                                    <span class="m_heart_time_span2"><i></i>0</span>
+                                </div>
                             </div>
-                        </div>
-                    </li>
-                    <li>
-                        <a class="m_heart_img" href="/news/356.html" target="_blank">
-                            <img src="https://img.homevv.com/uploadimg/ico/2020/0611/1591870298563429.jpg" alt="">
-                        </a>
-                        <div class="m_heart_tit">
-                            <h3><a href="/news/356.html" target="_blank">荒野乱斗新手怎么玩 新手如何入门<i></i></a>
-                            </h3>
-                            <a class="m_heart_read" href="/news/356.html" target="_blank">阅读全文</a>
-                            <p class="m_heat_p">
-                                《荒野乱斗》是一款拥有快节奏对战玩法的多人休闲竞技游戏，玩家能够在这个卡通荒野的世界中开启热血高能的乱斗，国服上线也是吸引了非常多的新人玩家，下面为大家带来一些新手入门的知识与攻略！……</p>
-                            <div class="m_heart_time">
-                                <span class="m_heart_time_span1"><i></i>2020/06/11</span>
-                                <span class="m_heart_time_span2"><i></i>0</span>
-                            </div>
-                        </div>
-                    </li>
-                                            <li>
-                        <a class="m_heart_img" href="/news/355.html" target="_blank">
-                            <img src="https://img.homevv.com/uploadimg/ico/2020/0604/1591256385577275.jpg" alt="">
-                        </a>
-                        <div class="m_heart_tit">
-                            <h3><a href="/news/355.html" target="_blank">众生游怎么吃饭 吃饭方法解析<i></i></a>
-                            </h3>
-                            <a class="m_heart_read" href="/news/355.html" target="_blank">阅读全文</a>
-                            <p class="m_heat_p">
-                                《众生游》是一款将真实世界内容进行游戏模拟融合打造的文字生存养成游戏，有着高度自由的人生模拟操作，其中吃饭更是头等大事，有不少小伙伴遇到吃饭方面的问题和疑惑，下面让我们一起来解析一下吧！……</p>
-                            <div class="m_heart_time">
-                                <span class="m_heart_time_span1"><i></i>2020/06/04</span>
-                                <span class="m_heart_time_span2"><i></i>0</span>
-                            </div>
-                        </div>
-                    </li>
-                                            <li>
-                        <a class="m_heart_img" href="/news/354.html" target="_blank">
-                            <img src="https://img.homevv.com/uploadimg/ico/2020/0528/1590640856195277.jpg" alt="">
-                        </a>
-                        <div class="m_heart_tit">
-                            <h3><a href="/news/354.html" target="_blank">一人之下手游怎么加好友 添加好友方法<i></i></a>
-                            </h3>
-                            <a class="m_heart_read" href="/news/354.html" target="_blank">阅读全文</a>
-                            <p class="m_heat_p">
-                                《一人之下》是一款由国产动漫IP塑造的二次元动作格斗游戏，能够带来炫酷的异能格斗，展现了独特中国范的风采，近期正式上线了，有很多玩家的加入，不少玩家还不知道如何添加好友，下面让我们一起来了解一下吧！……</p>
-                            <div class="m_heart_time">
-                                <span class="m_heart_time_span1"><i></i>2020/05/28</span>
-                                <span class="m_heart_time_span2"><i></i>0</span>
-                            </div>
-                        </div>
-                    </li>
-                                            <li>
-                        <a class="m_heart_img" href="/news/353.html" target="_blank">
-                            <img src="https://img.homevv.com/uploadimg/ico/2020/0521/1590054588852509.jpg" alt="">
-                        </a>
-                        <div class="m_heart_tit">
-                            <h3><a href="/news/353.html" target="_blank">邂逅在迷宫最强阵容是什么 强力角色推荐<i></i></a>
-                            </h3>
-                            <a class="m_heart_read" href="/news/353.html" target="_blank">阅读全文</a>
-                            <p class="m_heat_p">
-                                《邂逅在迷宫》是一款有着独特二次元属性的竖屏放置养成游戏，其中卡牌的组合搭配更是有着全面的升级，能够带来十分上头的掌控战斗体验，都是可以自由探索与搭配的，下面为大家带来一些强大的阵容推荐！……</p>
-                            <div class="m_heart_time">
-                                <span class="m_heart_time_span1"><i></i>2020/05/21</span>
-                                <span class="m_heart_time_span2"><i></i>0</span>
-                            </div>
-                        </div>
-                    </li>
-                                            <li>
-                        <a class="m_heart_img" href="/news/352.html" target="_blank">
-                            <img src="https://img.homevv.com/uploadimg/ico/2020/0514/1589449634753172.jpg" alt="">
-                        </a>
-                        <div class="m_heart_tit">
-                            <h3><a href="/news/352.html" target="_blank">战歌竞技场审判阵容推荐 羁绊组合攻略<i></i></a>
-                            </h3>
-                            <a class="m_heart_read" href="/news/352.html" target="_blank">阅读全文</a>
-                            <p class="m_heat_p">
-                                《战歌竞技场》是一款时下热度非常不错的腾讯自走棋游戏，有着很丰富的种族和羁绊可以选择搭配，不少玩家偏爱玩审判的阵容，下面为大家打来一个关于4审判这一羁绊的组合阵容，成型之后吃鸡还是较为简单地！……</p>
-                            <div class="m_heart_time">
-                                <span class="m_heart_time_span1"><i></i>2020/05/14</span>
-                                <span class="m_heart_time_span2"><i></i>0</span>
-                            </div>
-                        </div>
-                    </li>
-                                            <li>
-                        <a class="m_heart_img" href="/news/351.html" target="_blank">
-                            <img src="https://img.homevv.com/uploadimg/ico/2020/0507/1588845929263369.jpg" alt="">
-                        </a>
-                        <div class="m_heart_tit">
-                            <h3><a href="/news/351.html" target="_blank">海岛纪元怎么快速升级 快速升级方法<i></i></a>
-                            </h3>
-                            <a class="m_heart_read" href="/news/351.html" target="_blank">阅读全文</a>
-                            <p class="m_heat_p">
-                                《海岛纪元》是一款有着清新画风与高画质组队玩法的角色冒险游戏，剧情配乐各个方面都很吸引人，在4月30日也是迎来了全平台公测，有着不少玩家加入，其中升级也是很关键的一个内容，下面为大家带来一些升级方面的方法技巧！……</p>
-                            <div class="m_heart_time">
-                                <span class="m_heart_time_span1"><i></i>2020/05/07</span>
-                                <span class="m_heart_time_span2"><i></i>0</span>
-                            </div>
-                        </div>
-                    </li>
-                                            <li>
-                        <a class="m_heart_img" href="/news/350.html" target="_blank">
-                            <img src="https://img.homevv.com/uploadimg/ico/2020/0430/1588217126985811.jpg" alt="">
-                        </a>
-                        <div class="m_heart_tit">
-                            <h3><a href="/news/350.html" target="_blank">山海镜花怎么升级快 升级技巧<i></i></a>
-                            </h3>
-                            <a class="m_heart_read" href="/news/350.html" target="_blank">阅读全文</a>
-                            <p class="m_heat_p">
-                                《山海镜花》是一款有着关于山海经内容与炫酷二次元相结合的卡牌养成游戏，有着多维策略的冒险战斗内容，其中角色等级的提升对于各方面的推进体验都有着很关键的影响，下面为大家带来一些快速提升等级的方法！……</p>
-                            <div class="m_heart_time">
-                                <span class="m_heart_time_span1"><i></i>2020/04/30</span>
-                                <span class="m_heart_time_span2"><i></i>0</span>
-                            </div>
-                        </div>
-                    </li>
-                                            <li>
-                        <a class="m_heart_img" href="/news/349.html" target="_blank">
-                            <img src="https://img.homevv.com/uploadimg/ico/2020/0423/1587633823284748.jpg" alt="">
-                        </a>
-                        <div class="m_heart_tit">
-                            <h3><a href="/news/349.html" target="_blank">元素地牢怎么快速获得钻石 钻石获取攻略<i></i></a>
-                            </h3>
-                            <a class="m_heart_read" href="/news/349.html" target="_blank">阅读全文</a>
-                            <p class="m_heat_p">
-                                《元素地牢》是一款基于随机roguelike内容打造的地牢冒险手游，有着丰富的英雄角色和魔法元素能够组合搭配，想要更好的提升战斗能力，钻石的运用也很关键，而钻石也是较为稀缺的，下面为大家带来一些获得钻石的方法，希望能够对大家有所帮助。……</p>
-                            <div class="m_heart_time">
-                                <span class="m_heart_time_span1"><i></i>2020/04/23</span>
-                                <span class="m_heart_time_span2"><i></i>0</span>
-                            </div>
-                        </div>
-                    </li>
-                                            <li>
-                        <a class="m_heart_img" href="/news/348.html" target="_blank">
-                            <img src="https://img.homevv.com/uploadimg/ico/2020/0416/1587026823107477.png" alt="">
-                        </a>
-                        <div class="m_heart_tit">
-                            <h3><a href="/news/348.html" target="_blank">公主连结Re:Dive怎么提升羁绊 羁绊提升方法<i></i></a>
-                            </h3>
-                            <a class="m_heart_read" href="/news/348.html" target="_blank">阅读全文</a>
-                            <p class="m_heat_p">
-                                《公主连结Re:Dive》是一款满满二次元异世界幻想内容打造的番剧手游，有着史诗级的剧情和角色塑造，每一名角色都有着鲜活的刻画，其中角色羁绊的提升是可以提升属性、解锁专属剧情和收获奖励的，下面让我们来了解一下怎么提升羁绊。……</p>
-                            <div class="m_heart_time">
-                                <span class="m_heart_time_span1"><i></i>2020/04/16</span>
-                                <span class="m_heart_time_span2"><i></i>0</span>
-                            </div>
-                        </div>
-                    </li>
-                                        </ul>
+                        </li>
+                    {{ end }}
+                </ul>
             </div>
         </div>
         <div class="container-right">

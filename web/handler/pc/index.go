@@ -9,12 +9,18 @@ import (
 )
 
 type news struct {
-	ID        int
-	Title     string
-	Image     string
-	Desc      string
-	Total     int
-	CreatedAt time.Time
+	ID         int
+	Title      string
+	Image      string
+	Desc       string
+	Total      int
+	Author     string
+	Content    string
+	CategoryID int
+	CreatedAt  time.Time
+
+	Product  app
+	Category category
 }
 
 type category struct {
