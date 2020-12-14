@@ -15,6 +15,8 @@ type app struct {
 	Desc      string
 	Version   string
 	Size      string
+	URL       string
+	Language  string
 	CreatedAt time.Time
 	Category  category
 }

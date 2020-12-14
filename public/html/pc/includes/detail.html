@@ -1,0 +1,148 @@
+{{define "content"}}
+<div class="container1">
+	<div class="W1200">
+		<div class="con-left">
+			<div class="m-fl">
+				<div class="g-game-msg">
+					<img src="{{ .app.Image }}" class="g-game-img">
+					<h1>{{ .app.Title }}</h1>
+					<ul class="m-down-ul info ">
+						<li>
+							<a href="{{ .app.URL }}">
+								<i></i>立即下载
+								<span class="f-hov"></span>
+							</a>
+							<div class="hover-img">
+								<img src="https://img.homevv.com/uploadimg/temp/3c0dac2c9cf32f2b6795009e741d8a29.png">
+							</div>
+						</li>
+					</ul>
+					<ul class="m-downinfo">
+						<li>版本：<span>{{ .app.Version }}</span></li>
+						<li>分类：<span>{{ .app.Category.Title }}</span></li>
+						<li>大小：<b>{{ .app.Size }}</b></li>
+						<li>语言：<span>{{ .app.Language }}</span></li>
+						<li>时间：<span>{{ .app.CreatedAt.Format "2006-01-02" }}</span></li>
+						<!-- <li>上传者：<span>辜安卉</span></li> -->
+						<li>上传时间：<span>{{ .app.CreatedAt.Format "2006-01-02" }}</span></li>
+					</ul>
+					<div class="upload_link" style="text-align: center;">
+						<div class="downl_tips" style="float: initial;">
+							<span>下载声明</span>
+							<div class="downl_tips_wrap">
+								<div class="title">下载声明</div>
+								<p>
+									此应用作品版权归属为原作者享有，应用信息来源于各大手机应用市场，请选择对应的应用市场进行下载，如此app侵犯了您的版权请提供相应的app资质，以邮件的形式联系本站，本站将积极的配合处理。
+								</p>
+							</div>
+						</div>
+						<!-- <a href="/ruku.html" target="_blank">应用上传</a> -->
+					</div>
+				</div>
+				<div class="g-game-recomd">
+					<strong class="g-sec-title"><i></i>热门推荐</strong>
+					<ul>
+						<li>
+							<a href="/alpinia/17222/">
+								<img src="https://img.homevv.com/uploadimg/ico/2020/0716/1594884916466229.png">
+								<strong>Cytoid</strong>
+								<b>音乐舞蹈</b>
+								<em>立即下载</em>
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="con-center">
+			<ul class="g-info-tab u-mt-0">
+				<li class="m-hover">
+					<strong>
+					<i></i>详情</strong>
+				</li>
+				<li>
+					<strong>
+					<i></i>介绍</strong>
+				</li>
+				<li>
+					<strong>
+					<i></i>本类最新</strong>
+				</li>
+			</ul>
+			<div class="g-white-box g-azd-msg" style="margin-top: 10px;">
+				{{ .app.Content }}
+				<div class="g-azd-cont" id="content" style="height: 350px;">
+					<div class="u-content-mh" style="display: block;"></div>
+				</div>
+				<strong class="m-contshow-btn">展开+</strong>
+			</div>
+			<div class="g-white-box g-azd-previmg">
+				<dl class="g-downmain-title">
+					<dt>
+						<strong><i></i>游戏截图</strong>
+					</dt>
+					<dd></dd>
+				</dl>
+				<div class="g-previmg-box">
+					<div class="g-previmg-swiper">
+						<div class="swiper-wrapper">
+							<div class="swiper-slide">
+								<img src="https://img.homevv.com/uploadimg/img/2020/1012/1602464499498742.jpg" alt="钢琴师手游最新版">
+							</div>
+						</div>
+						<div class="u-previmg-btn swiper-button-prev swiper-button-disabled"></div>
+						<div class="u-previmg-btn swiper-button-next"></div>
+						<span class="swiper-notification"></span>
+					</div>
+					<div class="swiper-scrollbar">
+						<div class="swiper-scrollbar-drag"></div>
+					</div>
+				</div>
+			</div>
+			<div class="g-white-box g-azd-downlist">
+				<dl class="g-downmain-title">
+					<dt><strong><i></i>本类最新</strong></dt>
+					<dd></dd>
+				</dl>
+				<ul class="g-gz-cont">
+					<li>
+						<a href="/combat/17872/">
+							<img src="https://img.homevv.com/uploadimg/ico/2020/1012/1602464494662633.png">
+							<strong>钢琴师手游</strong>
+							<b>立即下载</b>
+						</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="con-right">
+			<div class="g-white-box g-azd-regame">
+				<strong class="g-sec-title"><i></i>相关APP</strong>
+				<ul>
+					<li>
+						<a href="/combat/17872/" title="钢琴师手游">
+							<img src="https://img.homevv.com/uploadimg/ico/2020/1012/1602464494662633.png">
+							<strong>钢琴师手游</strong>
+						</a>
+					</li>
+				</ul>
+			</div>
+			<div class="g-white-box g-azd-crank">
+				<strong class="g-sec-title"><i></i>本类下载排行</strong>
+				<ul class="m-add-hover">
+					<li class="m-rank-color1 m-hover">
+						<a href="/game/63.html">
+							<i>1</i>
+							<img src="https://img.homevv.com/uploadimg/ico/2018/0831/1535682041383578.png">
+							<strong>古树旋律</strong>
+							<b>立即下载</b>
+						</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+<script src="/js/pc/info.js?v1.0"></script>
+<script type="text/javascript" src="/js/views.js?v1.1"></script>
+{{end}}
