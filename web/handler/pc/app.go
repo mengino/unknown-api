@@ -1,6 +1,7 @@
 package pc
 
 import (
+	"dlsite/app/model"
 	"dlsite/internal/http/response"
 	"net/http"
 	"time"
@@ -17,6 +18,8 @@ type app struct {
 	Size      string
 	URL       string
 	Language  string
+	Content   string
+	Slide     model.ProductSlideJSON
 	CreatedAt time.Time
 	Category  category
 }

@@ -13,13 +13,12 @@ func NewsDetail(c *gin.Context) {
 	response.HTML(c, http.StatusOK, "news_detail.html", gin.H{
 		"nav": "news",
 		"news": news{
-			ID:         4,
-			CreatedAt:  time.Now(),
-			CategoryID: 1,
-			Title:      "bbbbbs",
-			Image:      "https://img.homevv.com/uploadimg/ico/2019/0605/1559728456211488.jpg",
-			Content:    "微信作为大家常用的一款聊天软件，基本上大部分人都在用吧~而就在刚在，突然发生了一件奇怪的事！自己发出去的信息，也没有被拒收，明明发送成功了，可是对方却没有收到！？这是怎么回事！天呐撸，下面就让小编来为大家介绍一下吧！",
-			Author:     "xxxxx",
+			ID:        4,
+			CreatedAt: time.Now(),
+			Title:     "bbbbbs",
+			Image:     "https://img.homevv.com/uploadimg/ico/2019/0605/1559728456211488.jpg",
+			Content:   "微信作为大家常用的一款聊天软件，基本上大部分人都在用吧~而就在刚在，突然发生了一件奇怪的事！自己发出去的信息，也没有被拒收，明明发送成功了，可是对方却没有收到！？这是怎么回事！天呐撸，下面就让小编来为大家介绍一下吧！",
+			Author:    "xxxxx",
 			Category: category{
 				ID:    1,
 				Title: "角色扮演",

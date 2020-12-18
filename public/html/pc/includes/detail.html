@@ -71,10 +71,10 @@
 			</ul>
 			<div class="g-white-box g-azd-msg" style="margin-top: 10px;">
 				{{ .app.Content }}
-				<div class="g-azd-cont" id="content" style="height: 350px;">
+				<!-- <div class="g-azd-cont" id="content" style="height: 350px;">
 					<div class="u-content-mh" style="display: block;"></div>
 				</div>
-				<strong class="m-contshow-btn">展开+</strong>
+				<strong class="m-contshow-btn">展开+</strong> -->
 			</div>
 			<div class="g-white-box g-azd-previmg">
 				<dl class="g-downmain-title">
@@ -86,9 +86,11 @@
 				<div class="g-previmg-box">
 					<div class="g-previmg-swiper">
 						<div class="swiper-wrapper">
+							{{ range .app.Slide }}
 							<div class="swiper-slide">
-								<img src="https://img.homevv.com/uploadimg/img/2020/1012/1602464499498742.jpg" alt="钢琴师手游最新版">
+								<img src="{{ . }}" alt="{{ $.app.Title }}">
 							</div>
+							{{ end }}
 						</div>
 						<div class="u-previmg-btn swiper-button-prev swiper-button-disabled"></div>
 						<div class="u-previmg-btn swiper-button-next"></div>
