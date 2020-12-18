@@ -7,9 +7,9 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-// Hj 合集
-func Hj(c *gin.Context) {
-	response.HTML(c, http.StatusOK, "hj.html", gin.H{
+// Collection 合集
+func Collection(c *gin.Context) {
+	response.HTML(c, http.StatusOK, "collection.html", gin.H{
 		"nav": "hj",
 	})
 }

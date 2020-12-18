@@ -79,11 +79,11 @@ func New(g *gin.Engine) *gin.Engine {
 		p.GET("/", pc.Index)
 		p.GET("/soft", pc.Soft)
 		p.GET("/game", pc.Game)
-		p.GET("/detail", pc.Detail)
+		p.GET("/detail/:id", pc.Detail)
 		p.GET("/news", pc.News)
 		p.GET("/news/:id", pc.NewsDetail)
-		p.GET("/hj", pc.Hj)
-		p.GET("/hj/:id", pc.HjDetail)
+		p.GET("/hj", pc.Collection)
+		p.GET("/hj/:id", pc.CollectionDetail)
 		p.GET("/top", pc.Top)
 	}
 
