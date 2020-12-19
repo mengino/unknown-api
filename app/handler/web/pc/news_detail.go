@@ -20,8 +20,8 @@ func NewsDetail(c *gin.Context) {
 			Content:   "微信作为大家常用的一款聊天软件，基本上大部分人都在用吧~而就在刚在，突然发生了一件奇怪的事！自己发出去的信息，也没有被拒收，明明发送成功了，可是对方却没有收到！？这是怎么回事！天呐撸，下面就让小编来为大家介绍一下吧！",
 			Author:    "xxxxx",
 			Category: category{
-				ID:    1,
-				Title: "角色扮演",
+				ID:   1,
+				Name: "角色扮演",
 			},
 			Product: app{
 				ID:        1,

@@ -24,7 +24,7 @@ type news struct {
 
 type category struct {
 	ID        int
-	Title     string
+	Name      string
 	CreatedAt time.Time
 }
 
@@ -76,20 +76,20 @@ func Index(c *gin.Context) {
 		},
 		"category": []category{
 			{
-				ID:    1,
-				Title: "角色扮演",
+				ID:   1,
+				Name: "角色扮演",
 			},
 			{
-				ID:    2,
-				Title: "休闲益智",
+				ID:   2,
+				Name: "休闲益智",
 			},
 			{
-				ID:    3,
-				Title: "动作冒险",
+				ID:   3,
+				Name: "动作冒险",
 			},
 			{
-				ID:    4,
-				Title: "解谜闯关",
+				ID:   4,
+				Name: "解谜闯关",
 			},
 		},
 	})

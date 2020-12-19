@@ -32,8 +32,8 @@ func Detail(c *gin.Context) {
 			},
 			CreatedAt: time.Now(),
 			Category: category{
-				ID:    1,
-				Title: "角色扮演",
+				ID:   1,
+				Name: "角色扮演",
 			},
 		},
 	})

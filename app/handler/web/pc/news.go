@@ -51,20 +51,20 @@ func News(c *gin.Context) {
 		},
 		"category": []category{
 			{
-				ID:    1,
-				Title: "新闻资讯",
+				ID:   1,
+				Name: "新闻资讯",
 			},
 			{
-				ID:    2,
-				Title: "游戏攻略",
+				ID:   2,
+				Name: "游戏攻略",
 			},
 			{
-				ID:    3,
-				Title: "软件教程",
+				ID:   3,
+				Name: "软件教程",
 			},
 			{
-				ID:    4,
-				Title: "活动大全",
+				ID:   4,
+				Name: "活动大全",
 			},
 		},
 	})

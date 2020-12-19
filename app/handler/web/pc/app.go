@@ -2,6 +2,7 @@ package pc
 
 import (
 	"dlsite/app/model"
+	"dlsite/app/repository"
 	"dlsite/internal/http/response"
 	"net/http"
 	"time"
@@ -33,7 +34,8 @@ type query struct {
 // Game 游戏下载
 func Game(c *gin.Context) {
 	response.HTML(c, http.StatusOK, "app.html", gin.H{
-		"nav": "game",
+		"nav":      "game",
+		"category": repository.GetCategoryList(model.GroupGame),
 		"list": []app{
 			{
 				ID:        1,
@@ -44,8 +46,8 @@ func Game(c *gin.Context) {
 				Size:      "63MB",
 				CreatedAt: time.Now(),
 				Category: category{
-					ID:    1,
-					Title: "角色扮演",
+					ID:   1,
+					Name: "角色扮演",
 				},
 			},
 			{
@@ -57,8 +59,8 @@ func Game(c *gin.Context) {
 				Size:      "63MB",
 				CreatedAt: time.Now(),
 				Category: category{
-					ID:    1,
-					Title: "角色扮演",
+					ID:   1,
+					Name: "角色扮演",
 				},
 			},
 			{
@@ -70,8 +72,8 @@ func Game(c *gin.Context) {
 				Size:      "63MB",
 				CreatedAt: time.Now(),
 				Category: category{
-					ID:    1,
-					Title: "角色扮演",
+					ID:   1,
+					Name: "角色扮演",
 				},
 			},
 			{
@@ -83,8 +85,8 @@ func Game(c *gin.Context) {
 				Size:      "63MB",
 				CreatedAt: time.Now(),
 				Category: category{
-					ID:    1,
-					Title: "角色扮演",
+					ID:   1,
+					Name: "角色扮演",
 				},
 			},
 			{
@@ -93,39 +95,40 @@ func Game(c *gin.Context) {
 				Image:     "https://img.homevv.com/uploadimg/ico/2019/0605/1559728456211488.jpg",
 				Desc:      "浓浓的古典气息",
 				Version:   "v1.0",
-				Size:      "63MB",
+				Size:      "63MB·",
 				CreatedAt: time.Now(),
 				Category: category{
-					ID:    1,
-					Title: "角色扮演",
+					ID:   1,
+					Name: "角色扮演",
 				},
 			},
 		},
-		"category": []category{
-			{
-				ID:    1,
-				Title: "角色扮演",
-			},
-			{
-				ID:    2,
-				Title: "休闲益智",
-			},
-			{
-				ID:    3,
-				Title: "动作冒险",
-			},
-			{
-				ID:    4,
-				Title: "解谜闯关",
-			},
-		},
+		// "category": []category{
+		// 	{
+		// 		ID:    1,
+		// 		Title: "角色扮演",
+		// 	},
+		// 	{
+		// 		ID:    2,
+		// 		Title: "休闲益智",
+		// 	},
+		// 	{
+		// 		ID:    3,
+		// 		Title: "动作冒险",
+		// 	},
+		// 	{
+		// 		ID:    4,
+		// 		Title: "解谜闯关",
+		// 	},
+		// },
 	})
 }
 
 // Soft 软件下载
 func Soft(c *gin.Context) {
 	response.HTML(c, http.StatusOK, "app.html", gin.H{
-		"nav": "soft",
+		"nav":      "soft",
+		"category": repository.GetCategoryList(model.GroupSoft),
 		"list": []app{
 			{
 				ID:        1,
@@ -136,8 +139,8 @@ func Soft(c *gin.Context) {
 				Size:      "63MB",
 				CreatedAt: time.Now(),
 				Category: category{
-					ID:    1,
-					Title: "角色扮演",
+					ID:   1,
+					Name: "角色扮演",
 				},
 			},
 			{
@@ -149,8 +152,8 @@ func Soft(c *gin.Context) {
 				Size:      "63MB",
 				CreatedAt: time.Now(),
 				Category: category{
-					ID:    1,
-					Title: "角色扮演",
+					ID:   1,
+					Name: "角色扮演",
 				},
 			},
 			{
@@ -162,8 +165,8 @@ func Soft(c *gin.Context) {
 				Size:      "63MB",
 				CreatedAt: time.Now(),
 				Category: category{
-					ID:    1,
-					Title: "角色扮演",
+					ID:   1,
+					Name: "角色扮演",
 				},
 			},
 			{
@@ -175,8 +178,8 @@ func Soft(c *gin.Context) {
 				Size:      "63MB",
 				CreatedAt: time.Now(),
 				Category: category{
-					ID:    1,
-					Title: "角色扮演",
+					ID:   1,
+					Name: "角色扮演",
 				},
 			},
 			{
@@ -188,28 +191,28 @@ func Soft(c *gin.Context) {
 				Size:      "63MB",
 				CreatedAt: time.Now(),
 				Category: category{
-					ID:    1,
-					Title: "角色扮演",
+					ID:   1,
+					Name: "角色扮演",
 				},
 			},
 		},
-		"category": []category{
-			{
-				ID:    1,
-				Title: "角色扮演",
-			},
-			{
-				ID:    2,
-				Title: "休闲益智",
-			},
-			{
-				ID:    3,
-				Title: "动作冒险",
-			},
-			{
-				ID:    4,
-				Title: "解谜闯关",
-			},
-		},
+		// "category": []category{
+		// 	{
+		// 		ID:    1,
+		// 		Title: "角色扮演",
+		// 	},
+		// 	{
+		// 		ID:    2,
+		// 		Title: "休闲益智",
+		// 	},
+		// 	{
+		// 		ID:    3,
+		// 		Title: "动作冒险",
+		// 	},
+		// 	{
+		// 		ID:    4,
+		// 		Title: "解谜闯关",
+		// 	},
+		// },
 	})
 }

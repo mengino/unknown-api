@@ -1,5 +1,13 @@
 package model
 
+var (
+	GroupGame       = 1
+	GroupSoft       = 2
+	GroupNews       = 3
+	GroupCollection = 4
+	GroupTop        = 5
+)
+
 // Category 分类模型
 type Category struct {
 	Base

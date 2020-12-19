@@ -22,8 +22,8 @@ func Top(c *gin.Context) {
 				Size:      "63MB",
 				CreatedAt: time.Now(),
 				Category: category{
-					ID:    1,
-					Title: "角色扮演",
+					ID:   1,
+					Name: "角色扮演",
 				},
 			},
 			{
@@ -35,8 +35,8 @@ func Top(c *gin.Context) {
 				Size:      "63MB",
 				CreatedAt: time.Now(),
 				Category: category{
-					ID:    1,
-					Title: "角色扮演",
+					ID:   1,
+					Name: "角色扮演",
 				},
 			},
 			{
@@ -48,8 +48,8 @@ func Top(c *gin.Context) {
 				Size:      "63MB",
 				CreatedAt: time.Now(),
 				Category: category{
-					ID:    1,
-					Title: "角色扮演",
+					ID:   1,
+					Name: "角色扮演",
 				},
 			},
 			{
@@ -61,8 +61,8 @@ func Top(c *gin.Context) {
 				Size:      "63MB",
 				CreatedAt: time.Now(),
 				Category: category{
-					ID:    1,
-					Title: "角色扮演",
+					ID:   1,
+					Name: "角色扮演",
 				},
 			},
 			{
@@ -74,27 +74,27 @@ func Top(c *gin.Context) {
 				Size:      "63MB",
 				CreatedAt: time.Now(),
 				Category: category{
-					ID:    1,
-					Title: "角色扮演",
+					ID:   1,
+					Name: "角色扮演",
 				},
 			},
 		},
 		"category": []category{
 			{
-				ID:    1,
-				Title: "角色扮演",
+				ID:   1,
+				Name: "角色扮演",
 			},
 			{
-				ID:    2,
-				Title: "休闲益智",
+				ID:   2,
+				Name: "休闲益智",
 			},
 			{
-				ID:    3,
-				Title: "动作冒险",
+				ID:   3,
+				Name: "动作冒险",
 			},
 			{
-				ID:    4,
-				Title: "解谜闯关",
+				ID:   4,
+				Name: "解谜闯关",
 			},
 		},
 	})
