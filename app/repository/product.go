@@ -10,11 +10,14 @@ func GetProductList(group, categoryID int, sort string) []model.Product {
 	var productList []model.Product
 
 	db := db.New().Where(&model.Product{
+		Base: model.Base{
+			Status: true,
+		},
 		Group:      group,
 		CategoryID: categoryID,
 	})
 
-	db.Order(sort + " desc").Find(&productList)
+	db.Order(sort + " desc, created_at desc").Find(&productList)
 
 	return productList
 }

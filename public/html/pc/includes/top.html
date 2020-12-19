@@ -17,13 +17,13 @@
             {{ range $k, $_ := .list }}
                 <div>
                     <i>{{add $k }}</i>
-                    <a href="/soft/{{ .ID }}.html" target="_self">
+                    <a href="/soft/{{ .ID }}" target="_self">
                         <img src="{{ .Image }}">
                     </a>
-                    <a href="/soft/{{ .ID }}.html" target="_self"><strong>{{ .Title }}</strong></a>
+                    <a href="/soft/{{ .ID }}" target="_self"><strong>{{ .Title }}</strong></a>
                     <b>
                         <span>
-                            <a href="/game?category={{ .Category.ID }}.html" target="_self">{{ .Category.Title }}</a>
+                            <a href="/game?category={{ .Category.ID }}" target="_self">{{ .Category.Title }}</a>
                             / {{ .Size }} /
                         </span>
                         <span class="start">
@@ -33,7 +33,7 @@
                     <p>{{ .Desc }}</p>
                     <dl>
                         <dt><span></span></dt>
-                        <dd><a href="/soft/{{ .ID }}.html" target="_self">立即下载</a></dd>
+                        <dd><a href="/soft/{{ .ID }}" target="_self">立即下载</a></dd>
                     </dl>
                 </div>
             {{ end }}
@@ -46,56 +46,56 @@
         <div class="m-titler"><i class="sprank sprank-ic-classification"></i>热门榜单</div>
         <div class="m-content-box">
             <!--自定义页面-->
-            <a class="u-tag" href="/top/gj.html" target="_blank">挂机类手游</a>
-            <a class="u-tag" href="/top/jkrj.html" target="_blank">健康软件</a>
-            <a class="u-tag" href="/top/wz.html" target="_blank">文字类手游</a>
-            <a class="u-tag" href="/top/dt.html" target="_blank">电台</a>
-            <a class="u-tag" href="/top/wq.html" target="_blank">围棋游戏</a>
-            <a class="u-tag" href="/top/xx.html" target="_blank">仙侠手游</a>
-            <a class="u-tag" href="/top/wx.html" target="_blank">武侠手游</a>
-            <a class="u-tag" href="/top/dl.html" target="_blank">地牢类手游</a>
-            <a class="u-tag" href="/top/zsjj.html" target="_blank">战术竞技手游</a>
-            <a class="u-tag" href="/top/jy.html" target="_blank">经营类手游</a>
-            <a class="u-tag" href="/top/srfapp.html" target="_blank">输入法app</a>
-            <a class="u-tag" href="/top/dz.html" target="_blank">段子app</a>
-            <a class="u-tag" href="/top/tqyb.html" target="_blank">天气预报app</a>
-            <a class="u-tag" href="/top/fyrj.html" target="_blank">翻译软件</a>
-            <a class="u-tag" href="/top/msrsj.html" target="_blank">陌生人社交app</a>
-            <a class="u-tag" href="/top/volg.html" target="_blank">volg软件</a>
-            <a class="u-tag" href="/top/btcqsy.html" target="_blank">变态传奇手游</a>
-            <a class="u-tag" href="/top/xhxh.html" target="_blank">小孩喜欢的手游</a>
-            <a class="u-tag" href="/top/splz.html" target="_blank">视频录制软件</a>
-            <a class="u-tag" href="/top/ecy.html" target="_blank">二次元手游</a>
-            <a class="u-tag" href="/top/tfsy.html" target="_blank">塔防手游</a>
-            <a class="u-tag" href="/top/yyrj.html" target="_blank">音乐软件</a>
-            <a class="u-tag" href="/top/ztrj.html" target="_blank">作图软件</a>
-            <a class="u-tag" href="/top/drsj.html" target="_blank">多人射击手游</a>
-            <a class="u-tag" href="/top/chiji.html" target="_blank">吃鸡手游</a>
-            <a class="u-tag" href="/top/hanghai.html" target="_blank">航海手游</a>
-            <a class="u-tag" href="/top/tysy.html" target="_blank">体育手游</a>
-            <a class="u-tag" href="/top/celue.html" target="_blank">策略手游</a>
-            <a class="u-tag" href="/top/jianshen.html" target="_blank">健身软件</a>
-            <a class="u-tag" href="/top/tuangou.html" target="_blank">团购软件</a>
-            <a class="u-tag" href="/top/zhuti.html" target="_blank">主题软件</a>
-            <a class="u-tag" href="/top/lingsheng.html" target="_blank">铃声软件</a>
-            <a class="u-tag" href="/top/erge.html" target="_blank">儿歌软件</a>
-            <a class="u-tag" href="/top/jgsapp.html" target="_blank">讲故事app</a>
-            <a class="u-tag" href="/top/danji.html" target="_blank">单机手游</a>
-            <a class="u-tag" href="/top/fufei.html" target="_blank">付费手游</a>
-            <a class="u-tag" href="/top/wangyi.html" target="_blank">网易手游</a>
-            <a class="u-tag" href="/top/tengxun.html" target="_blank">腾讯手游</a>
-            <a class="u-tag" href="/top/dyyx.html" target="_blank">抖音游戏</a>
-            <a class="u-tag" href="/top/ttsy.html" target="_blank">推塔手游</a>
-            <a class="u-tag" href="/top/spsy.html" target="_blank">沙盘手游</a>
-            <a class="u-tag" href="/top/drjssy.html" target="_blank">多人竞速手游</a>
-            <a class="u-tag" href="/top/jmsy.html" target="_blank">解谜手游</a>
-            <a class="u-tag" href="/top/fpssy.html" target="_blank">FPS手游</a>
-            <a class="u-tag" href="/top/msrlt.html" target="_blank">陌生人聊天app</a>
-            <a class="u-tag" href="/top/kgrj.html" target="_blank">k歌软件</a>
-            <a class="u-tag" href="/top/whxjrj.html" target="_blank">网红相机软件</a>
-            <a class="u-tag" href="/top/tssy.html" target="_blank">逃生手游</a>
-            <a class="u-tag" href="/top/qzsy.html" target="_blank">枪战手游</a>
-            <a class="u-tag" href="/top/meiyan.html" target="_blank">美颜软件</a>
+            <a class="u-tag" href="/top/gj" target="_blank">挂机类手游</a>
+            <a class="u-tag" href="/top/jkrj" target="_blank">健康软件</a>
+            <a class="u-tag" href="/top/wz" target="_blank">文字类手游</a>
+            <a class="u-tag" href="/top/dt" target="_blank">电台</a>
+            <a class="u-tag" href="/top/wq" target="_blank">围棋游戏</a>
+            <a class="u-tag" href="/top/xx" target="_blank">仙侠手游</a>
+            <a class="u-tag" href="/top/wx" target="_blank">武侠手游</a>
+            <a class="u-tag" href="/top/dl" target="_blank">地牢类手游</a>
+            <a class="u-tag" href="/top/zsjj" target="_blank">战术竞技手游</a>
+            <a class="u-tag" href="/top/jy" target="_blank">经营类手游</a>
+            <a class="u-tag" href="/top/srfapp" target="_blank">输入法app</a>
+            <a class="u-tag" href="/top/dz" target="_blank">段子app</a>
+            <a class="u-tag" href="/top/tqyb" target="_blank">天气预报app</a>
+            <a class="u-tag" href="/top/fyrj" target="_blank">翻译软件</a>
+            <a class="u-tag" href="/top/msrsj" target="_blank">陌生人社交app</a>
+            <a class="u-tag" href="/top/volg" target="_blank">volg软件</a>
+            <a class="u-tag" href="/top/btcqsy" target="_blank">变态传奇手游</a>
+            <a class="u-tag" href="/top/xhxh" target="_blank">小孩喜欢的手游</a>
+            <a class="u-tag" href="/top/splz" target="_blank">视频录制软件</a>
+            <a class="u-tag" href="/top/ecy" target="_blank">二次元手游</a>
+            <a class="u-tag" href="/top/tfsy" target="_blank">塔防手游</a>
+            <a class="u-tag" href="/top/yyrj" target="_blank">音乐软件</a>
+            <a class="u-tag" href="/top/ztrj" target="_blank">作图软件</a>
+            <a class="u-tag" href="/top/drsj" target="_blank">多人射击手游</a>
+            <a class="u-tag" href="/top/chiji" target="_blank">吃鸡手游</a>
+            <a class="u-tag" href="/top/hanghai" target="_blank">航海手游</a>
+            <a class="u-tag" href="/top/tysy" target="_blank">体育手游</a>
+            <a class="u-tag" href="/top/celue" target="_blank">策略手游</a>
+            <a class="u-tag" href="/top/jianshen" target="_blank">健身软件</a>
+            <a class="u-tag" href="/top/tuangou" target="_blank">团购软件</a>
+            <a class="u-tag" href="/top/zhuti" target="_blank">主题软件</a>
+            <a class="u-tag" href="/top/lingsheng" target="_blank">铃声软件</a>
+            <a class="u-tag" href="/top/erge" target="_blank">儿歌软件</a>
+            <a class="u-tag" href="/top/jgsapp" target="_blank">讲故事app</a>
+            <a class="u-tag" href="/top/danji" target="_blank">单机手游</a>
+            <a class="u-tag" href="/top/fufei" target="_blank">付费手游</a>
+            <a class="u-tag" href="/top/wangyi" target="_blank">网易手游</a>
+            <a class="u-tag" href="/top/tengxun" target="_blank">腾讯手游</a>
+            <a class="u-tag" href="/top/dyyx" target="_blank">抖音游戏</a>
+            <a class="u-tag" href="/top/ttsy" target="_blank">推塔手游</a>
+            <a class="u-tag" href="/top/spsy" target="_blank">沙盘手游</a>
+            <a class="u-tag" href="/top/drjssy" target="_blank">多人竞速手游</a>
+            <a class="u-tag" href="/top/jmsy" target="_blank">解谜手游</a>
+            <a class="u-tag" href="/top/fpssy" target="_blank">FPS手游</a>
+            <a class="u-tag" href="/top/msrlt" target="_blank">陌生人聊天app</a>
+            <a class="u-tag" href="/top/kgrj" target="_blank">k歌软件</a>
+            <a class="u-tag" href="/top/whxjrj" target="_blank">网红相机软件</a>
+            <a class="u-tag" href="/top/tssy" target="_blank">逃生手游</a>
+            <a class="u-tag" href="/top/qzsy" target="_blank">枪战手游</a>
+            <a class="u-tag" href="/top/meiyan" target="_blank">美颜软件</a>
         </div>
     </div>
 </div>

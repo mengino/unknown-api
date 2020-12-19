@@ -9,7 +9,12 @@ import (
 func GetCategoryList(group int) []model.Category {
 	var categoryList []model.Category
 
-	db.New().Where("`group` = ? AND status = ?", group, 1).Find(&categoryList)
+	db.New().Where(&model.Category{
+		Base: model.Base{
+			Status: true,
+		},
+		Group: group,
+	}).Order("sort desc, created_at desc").Find(&categoryList)
 
 	return categoryList
 }

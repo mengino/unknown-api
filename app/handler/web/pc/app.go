@@ -5,6 +5,7 @@ import (
 	"dlsite/app/repository"
 	"dlsite/internal/http/response"
 	"net/http"
+	"strconv"
 	"time"
 
 	"github.com/gin-gonic/gin"
@@ -33,94 +34,15 @@ type query struct {
 
 // Game 游戏下载
 func Game(c *gin.Context) {
+	category, err := strconv.Atoi(c.Query("category"))
+	if err != nil {
+
+	}
+
 	response.HTML(c, http.StatusOK, "app.html", gin.H{
 		"nav":      "game",
 		"category": repository.GetCategoryList(model.GroupGame),
-		"list": []app{
-			{
-				ID:        1,
-				Title:     "微信信息发出去对方没收到",
-				Image:     "https://img.homevv.com/uploadimg/ico/2019/0605/1559728456211488.jpg",
-				Desc:      "浓浓的古典气息",
-				Version:   "v1.0",
-				Size:      "63MB",
-				CreatedAt: time.Now(),
-				Category: category{
-					ID:   1,
-					Name: "角色扮演",
-				},
-			},
-			{
-				ID:        2,
-				Title:     "xxxxxx",
-				Image:     "https://img.homevv.com/uploadimg/ico/2019/0605/1559728456211488.jpg",
-				Desc:      "浓浓的古典气息",
-				Version:   "v1.0",
-				Size:      "63MB",
-				CreatedAt: time.Now(),
-				Category: category{
-					ID:   1,
-					Name: "角色扮演",
-				},
-			},
-			{
-				ID:        3,
-				Title:     "zzzzzz",
-				Image:     "https://img.homevv.com/uploadimg/ico/2019/0605/1559728456211488.jpg",
-				Desc:      "浓浓的古典气息",
-				Version:   "v1.0",
-				Size:      "63MB",
-				CreatedAt: time.Now(),
-				Category: category{
-					ID:   1,
-					Name: "角色扮演",
-				},
-			},
-			{
-				ID:        4,
-				Title:     "bbbbbs",
-				Image:     "https://img.homevv.com/uploadimg/ico/2019/0605/1559728456211488.jpg",
-				Desc:      "浓浓的古典气息",
-				Version:   "v1.0",
-				Size:      "63MB",
-				CreatedAt: time.Now(),
-				Category: category{
-					ID:   1,
-					Name: "角色扮演",
-				},
-			},
-			{
-				ID:        5,
-				Title:     "aaaa",
-				Image:     "https://img.homevv.com/uploadimg/ico/2019/0605/1559728456211488.jpg",
-				Desc:      "浓浓的古典气息",
-				Version:   "v1.0",
-				Size:      "63MB·",
-				CreatedAt: time.Now(),
-				Category: category{
-					ID:   1,
-					Name: "角色扮演",
-				},
-			},
-		},
-		// "category": []category{
-		// 	{
-		// 		ID:    1,
-		// 		Title: "角色扮演",
-		// 	},
-		// 	{
-		// 		ID:    2,
-		// 		Title: "休闲益智",
-		// 	},
-		// 	{
-		// 		ID:    3,
-		// 		Title: "动作冒险",
-		// 	},
-		// 	{
-		// 		ID:    4,
-		// 		Title: "解谜闯关",
-		// 	},
-		// },
+		"list":     repository.GetProductList(model.GroupGame, category, c.DefaultQuery("sort", "sort")),
 	})
 }
 
@@ -196,23 +118,5 @@ func Soft(c *gin.Context) {
 				},
 			},
 		},
-		// "category": []category{
-		// 	{
-		// 		ID:    1,
-		// 		Title: "角色扮演",
-		// 	},
-		// 	{
-		// 		ID:    2,
-		// 		Title: "休闲益智",
-		// 	},
-		// 	{
-		// 		ID:    3,
-		// 		Title: "动作冒险",
-		// 	},
-		// 	{
-		// 		ID:    4,
-		// 		Title: "解谜闯关",
-		// 	},
-		// },
 	})
 }

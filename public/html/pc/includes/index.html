@@ -66,7 +66,7 @@
             </li>
           {{ end }}
         {{ end }}
-        <!-- <li> <a target="_blank" href="/news/94.html">饥荒远古织影者怎么打</a> <span>2019-05-05</span> </li> -->
+        <!-- <li> <a target="_blank" href="/news/94">饥荒远古织影者怎么打</a> <span>2019-05-05</span> </li> -->
       </ul>
     </div>
     <div class="conta-center">
@@ -74,11 +74,11 @@
         <em class="titmod-label">爆</em>
         <div class="tit-mod-r">
           {{ $v := index .news 0 }}
-          <a class="big-tit" target="_blank" href="/news/{{ $v.ID }}.html"> <h5>{{ $v.Title }}</h5> </a>
+          <a class="big-tit" target="_blank" href="/news/{{ $v.ID }}"> <h5>{{ $v.Title }}</h5> </a>
           {{ $v := index .news 1 }}
           <a target="_blank" href="/news/{{ $v.ID }}" class="small-tit">[{{ $v.Title }}]</a>
-          <!-- <a class="big-tit" target="_blank" href="/news/103.html"> <h5>《和平精英》公测礼包领取地址</h5> </a>
-          <a target="_blank" href="/news/71.html" class="small-tit">[2019抖音热门歌曲]</a> -->
+          <!-- <a class="big-tit" target="_blank" href="/news/103"> <h5>《和平精英》公测礼包领取地址</h5> </a>
+          <a target="_blank" href="/news/71" class="small-tit">[2019抖音热门歌曲]</a> -->
         </div>
       </div>
       <div class="mod-c-jue bao-jue">
@@ -88,8 +88,8 @@
           <a class="big-tit" target="_blank" href="/news/{{ $v.ID }}"> <h5>{{ $v.Title }}</h5> </a>
           {{ $v := index .news 0 }}
           <a target="_blank" href="/news/{{ $v.ID }}" class="small-tit">[{{ $v.Title }}]</a>
-          <!-- <a class="big-tit" target="_blank" href="/news/69.html"> <h5>抖音vlog详细拍摄教程 分分钟就能学会</h5> </a>
-          <a target="_blank" href="/news/104.html" class="small-tit">[和平精英信号值是什么]</a> -->
+          <!-- <a class="big-tit" target="_blank" href="/news/69"> <h5>抖音vlog详细拍摄教程 分分钟就能学会</h5> </a>
+          <a target="_blank" href="/news/104" class="small-tit">[和平精英信号值是什么]</a> -->
         </div>
       </div>
       <div class="ifo_con1">
@@ -97,13 +97,13 @@
           {{ range .news }}
             <li class="ifo_txt">
               <i></i>
-              <span><a href="/news/{{ .ID }}.html" target="_blank">{{ .Title }}</a></span>
+              <span><a href="/news/{{ .ID }}" target="_blank">{{ .Title }}</a></span>
               <em>{{ .CreatedAt.Format "01-02" }}</em>
             </li>
           {{ end }}
           <!-- <li class="ifo_txt">
             <i></i>
-            <span><a href="/news/357.html" target="_blank">奴隶少女希尔薇所有结局攻略</a></span>
+            <span><a href="/news/357" target="_blank">奴隶少女希尔薇所有结局攻略</a></span>
             <em>07-06</em>
           </li> -->
         </ul>
@@ -113,7 +113,7 @@
     <ul class="hj-list">
       {{ range .news }}
         <li>
-          <a href="/hj/{{ .ID }}.html">
+          <a href="/hj/{{ .ID }}">
             <div class="yui-card1">
               <img class="card-img" src="{{ .Image }}" alt="{{ .Title }}" />
             </div>
@@ -128,7 +128,7 @@
         </li>
       {{ end }}
       <!-- <li>
-        <a href="/hj/17.html">
+        <a href="/hj/17">
           <div class="yui-card1">
             <img class="card-img" src="https://img.homevv.com/uploadimg/ico/2019/0328/1553765682132533.jpg" alt="抖音手游" />
           </div>
@@ -158,44 +158,44 @@
           <ul class="Tab_list clear_">
             <li class="cur_class"><a href="/game/">全部分类</a></li>
             {{ range .category }}
-              <li><a href="/game/{{ .ID }}.html">{{ .Title }}</a></li>
+              <li><a href="/game/{{ .ID }}">{{ .Title }}</a></li>
             {{ end }}
-            <!-- <li><a href="/game/4_1_1.html">角色扮演</a></li> -->
+            <!-- <li><a href="/game/4_1_1">角色扮演</a></li> -->
           </ul>
           {{ $v := index .news 0 }}
-          <a target="_blank" class="tuandroid" href="/hj/{{ $v.ID }}.html">
+          <a target="_blank" class="tuandroid" href="/hj/{{ $v.ID }}">
             <img src="{{ $v.Image }}" alt="{{ $v.Title }}" />
           </a>
           <ul class="news-qy-label clear_">
             {{ range .news }}
-              <li> <a target="_blank" href="/hj/{{ .ID }}.html"> <em>{{ .Title }}</em> </a> </li>
+              <li> <a target="_blank" href="/hj/{{ .ID }}"> <em>{{ .Title }}</em> </a> </li>
             {{ end }}
-            <!-- <li> <a target="_blank" href="/hj/70.html"> <em>变态传奇</em> </a> </li> -->
-            <!-- <li style="display: none;"> <a target="_blank" href="/chess/1567.html"> <em>九乐棋牌手机版</em> </a> </li>
-            <li style="display: none;"> <a target="_blank" href="/special/1566.html"> <em>九乐棋牌安卓版</em> </a> </li>
-            <li style="display: none;"> <a target="_blank" href="/aggregate/1565.html"> <em>九乐棋牌app</em> </a> </li> -->
+            <!-- <li> <a target="_blank" href="/hj/70"> <em>变态传奇</em> </a> </li> -->
+            <!-- <li style="display: none;"> <a target="_blank" href="/chess/1567"> <em>九乐棋牌手机版</em> </a> </li>
+            <li style="display: none;"> <a target="_blank" href="/special/1566"> <em>九乐棋牌安卓版</em> </a> </li>
+            <li style="display: none;"> <a target="_blank" href="/aggregate/1565"> <em>九乐棋牌app</em> </a> </li> -->
           </ul>
         </div>
         <div class="down_right" id="down_right">
         <ul>
           {{ range .news }}
           <li>
-            <a target="_blank" href="/cultivate/{{ .ID }}.html">
+            <a target="_blank" href="/cultivate/{{ .ID }}">
               <span></span>
               <img src="{{ .Image }}" alt="{{ .Title }}" />
             </a>
             <div>
-              <a target="_blank" href="/cultivate/{{ .Image }}.html">{{ .Title }} </a>
+              <a target="_blank" href="/cultivate/{{ .Image }}">{{ .Title }} </a>
             </div>
           </li>
           {{ end }}
           <!-- <li>
-            <a target="_blank" href="/cultivate/17873.html">
+            <a target="_blank" href="/cultivate/17873">
               <span></span>
               <img src="https://img.homevv.com/uploadimg/ico/2020/1012/1602464494662633.png" alt="钢琴师手游最新版" />
             </a>
             <div>
-              <a target="_blank" href="/cultivate/17873.html">钢琴师手游最新版 </a>
+              <a target="_blank" href="/cultivate/17873">钢琴师手游最新版 </a>
             </div>
           </li> -->
         </ul>
@@ -214,21 +214,21 @@
         <div class="lb-main-l">
           <div class="game-gl-ban">
             {{ $v := index .news 0 }}
-            <a target="_blank" href="/news/{{ $v.ID }}.html">
+            <a target="_blank" href="/news/{{ $v.ID }}">
               <img class="game-glban-img" src="{{ $v.Image }}" alt="{{ $v.Title }}" />
             </a>
           </div>
           <ul class="game-gl-list">
             {{ range .news }}
             <li>
-              <a target="_blank" href="/news/{{ .ID }}.html">
+              <a target="_blank" href="/news/{{ .ID }}">
                 <img src="{{ .Image }}" alt="{{ .Title }}" />
                 <span>{{ .Title }}</span>
               </a>
             </li>
             {{ end }}
             <!-- <li>
-              <a target="_blank" href="/news/14.html">
+              <a target="_blank" href="/news/14">
                 <img src="https://img.homevv.com/uploadimg/ico/2019/0418/1555557962728596.jpg" alt="" />
                 <span>抖音怎么合拍</span>
               </a>
@@ -238,7 +238,7 @@
         <div class="lb-main-r">
           <div class="sel-list-top">
             {{ $v := index .news 0 }}
-            <a target="_blank" href="/news/{{ $v.ID }}.html">
+            <a target="_blank" href="/news/{{ $v.ID }}">
               <span class="sel-top-tit">{{ $v.Title }}</span>
             </a>
             <span class="sel-top-tip">{{ $v.Desc }}</span>
@@ -246,11 +246,11 @@
           <ul class="news-list">
             {{ range .news }}
               <li>
-                <a target="_blank" href="/news/{{ .ID }}.html">{{ .Title }}</a>
+                <a target="_blank" href="/news/{{ .ID }}">{{ .Title }}</a>
                 <span>{{ .CreatedAt.Format "2006/01/02"}}</span>
               </li>
             {{ end }}
-            <!-- <li> <a target="_blank" href="/news/355.html">众生游怎么吃饭 吃饭方法解析</a> <span>2020/06/04</span> </li> -->
+            <!-- <li> <a target="_blank" href="/news/355">众生游怎么吃饭 吃饭方法解析</a> <span>2020/06/04</span> </li> -->
           </ul>
         </div>
       </div>
@@ -262,9 +262,9 @@
       </div>
       <ul class="news-qy-list">
         {{ range .news }}
-          <li> <a target="_blank" href="/news/{{ .ID }}.html">{{ .Title }}</a> </li>
+          <li> <a target="_blank" href="/news/{{ .ID }}">{{ .Title }}</a> </li>
         {{ end }}
-        <!-- <li> <a target="_blank" href="/news/347.html">命运神界：梦境链接怎么装装备 装备使用方法</a> </li> -->
+        <!-- <li> <a target="_blank" href="/news/347">命运神界：梦境链接怎么装装备 装备使用方法</a> </li> -->
       </ul>
     </div>
   </div>
@@ -281,22 +281,22 @@
       <ul class="Tab_list" style="display: block;">
         <li class="cur_class"><a href="/soft/">全部分类</a></li>
         {{ range .category }}
-          <li><a href="/soft/{{ .ID }}.html">{{ .Title }}</a></li>
+          <li><a href="/soft/{{ .ID }}">{{ .Title }}</a></li>
         {{ end }}
-        <!-- <li><a href="/soft/16_1_1.html">影音播放</a></li> -->
+        <!-- <li><a href="/soft/16_1_1">影音播放</a></li> -->
       </ul>
       {{ $v := index .news 0 }}
-      <a target="_blank" class="tuandroid" href="/hj/{{ $v.ID }}.html">
+      <a target="_blank" class="tuandroid" href="/hj/{{ $v.ID }}">
         <img src="{{ $v.Image }}" alt="{{ $v.Title }}" />
       </a>
       <ul class="news-qy-label clear_">
         {{ range .news }}
-          <li> <a target="_blank" href="/hj/{{ .ID }}.html"> <em>{{ .Title }}</em> </a> </li>
+          <li> <a target="_blank" href="/hj/{{ .ID }}"> <em>{{ .Title }}</em> </a> </li>
         {{ end }}
-        <!-- <li> <a target="_blank" href="/hj/152.html"> <em>电台app</em> </a> </li> -->
-        <!-- <li style="display: none;"> <a target="_blank" href="/whole/463.html"> <em>平刷王分分彩软件</em> </a> </li>
-        <li style="display: none;"> <a target="_blank" href="/chess/462.html"> <em>平刷王分分彩免费版</em> </a> </li>
-        <li style="display: none;"> <a target="_blank" href="/whole/458.html"> <em>3d彩神通软件</em> </a> </li> -->
+        <!-- <li> <a target="_blank" href="/hj/152"> <em>电台app</em> </a> </li> -->
+        <!-- <li style="display: none;"> <a target="_blank" href="/whole/463"> <em>平刷王分分彩软件</em> </a> </li>
+        <li style="display: none;"> <a target="_blank" href="/chess/462"> <em>平刷王分分彩免费版</em> </a> </li>
+        <li style="display: none;"> <a target="_blank" href="/whole/458"> <em>3d彩神通软件</em> </a> </li> -->
       </ul>
     </div>
     <div class="down_right" id="down_right">

@@ -7,7 +7,7 @@
             <div class="label_wrap">
                 <a href="/news/" class="on">全部</a>
                 {{ range .category }}
-                    <a href="/news?category={{ .ID }}.html">{{ .Title }}</a>
+                    <a href="/news?category={{ .ID }}">{{ .Title }}</a>
                 {{ end }}
                 </div>
             <!--新闻列表-->
@@ -15,13 +15,13 @@
                 <ul class="m_heart">
                     {{ range .news }}
                         <li>
-                            <a class="m_heart_img" href="/news/{{ .ID }}.html" target="_blank">
+                            <a class="m_heart_img" href="/news/{{ .ID }}" target="_blank">
                                 <img src="{{ .Image }}" alt="">
                             </a>
                             <div class="m_heart_tit">
-                                <h3><a href="/news/{{ .ID }}.html" target="_blank">{{ .Title }}<i></i></a>
+                                <h3><a href="/news/{{ .ID }}" target="_blank">{{ .Title }}<i></i></a>
                                 </h3>
-                                <a class="m_heart_read" href="/news/{{ .ID }}.html" target="_blank">阅读全文</a>
+                                <a class="m_heart_read" href="/news/{{ .ID }}" target="_blank">阅读全文</a>
                                 <p class="m_heat_p">
                                     {{ .Desc }}
                                 </p>
@@ -45,42 +45,42 @@
                     <div class="b-hot-t">
                         <ul style="display:block">
                                                             <li class="b-hot-active">
-                                <a href="/news/320.html" target="_blank">
+                                <a href="/news/320" target="_blank">
                                     <img class="b-hot-t-img" src="https://img.homevv.com/uploadimg/ico/2019/0829/1567040103819279.jpg">
                                     <p class="b-hot-t-p">剑网三十周年发布会爆料内容</p>
                                     <span class="b-hot-t-span">2019/08/29</span>
                                 </a>
                             </li>
                                                             <li class="b-hot-">
-                                <a href="/news/106.html" target="_blank">
+                                <a href="/news/106" target="_blank">
                                     <img class="b-hot-t-img" src="https://img.homevv.com/uploadimg/ico/2019/0510/1557483945756541.jpg">
                                     <p class="b-hot-t-p">绝地求生：刺激战场国际服在哪下载</p>
                                     <span class="b-hot-t-span">2019/05/10</span>
                                 </a>
                             </li>
                                                             <li class="b-hot-">
-                                <a href="/news/102.html" target="_blank">
+                                <a href="/news/102" target="_blank">
                                     <img class="b-hot-t-img" src="https://img.homevv.com/uploadimg/ico/2019/0508/1557284469571641.jpg">
                                     <p class="b-hot-t-p">刺激战场为什么进不去了</p>
                                     <span class="b-hot-t-span">2019/05/08</span>
                                 </a>
                             </li>
                                                             <li class="b-hot-">
-                                <a href="/news/101.html" target="_blank">
+                                <a href="/news/101" target="_blank">
                                     <img class="b-hot-t-img" src="https://img.homevv.com/uploadimg/ico/2019/0506/1557129470967455.png">
                                     <p class="b-hot-t-p">传送门骑士光明王怎么打</p>
                                     <span class="b-hot-t-span">2019/05/06</span>
                                 </a>
                             </li>
                                                             <li class="b-hot-">
-                                <a href="/news/100.html" target="_blank">
+                                <a href="/news/100" target="_blank">
                                     <img class="b-hot-t-img" src="https://img.homevv.com/uploadimg/ico/2019/0506/1557127872316493.png">
                                     <p class="b-hot-t-p">传送门骑士远古蠕虫怎么打</p>
                                     <span class="b-hot-t-span">2019/05/06</span>
                                 </a>
                             </li>
                                                             <li class="b-hot-">
-                                <a href="/news/99.html" target="_blank">
+                                <a href="/news/99" target="_blank">
                                     <img class="b-hot-t-img" src="https://img.homevv.com/uploadimg/ico/2019/0506/1557126674782751.png">
                                     <p class="b-hot-t-p">传送门骑士冰龙怎么打</p>
                                     <span class="b-hot-t-span">2019/05/06</span>
@@ -101,7 +101,7 @@
                                 </a>
                                 <div class="b-r-con-t">
                                     <h3><a href="/social/17722/" target="_blank">有章阅读</a></h3>
-                                    <p><a href="/soft/18_1_1.html">资讯阅读</a> <i></i>19.74MB</p>
+                                    <p><a href="/soft/18_1_1">资讯阅读</a> <i></i>19.74MB</p>
                                 </div>
                                 <a href="/social/17722/" target="_blank" class="b-r-download">查看</a>
                             </li>
@@ -111,29 +111,29 @@
                                 </a>
                                 <div class="b-r-con-t">
                                     <h3><a href="/alpinia/17222/" target="_blank">Cytoid</a></h3>
-                                    <p><a href="/game/14_1_1.html">音乐舞蹈</a> <i></i>74.38MB</p>
+                                    <p><a href="/game/14_1_1">音乐舞蹈</a> <i></i>74.38MB</p>
                                 </div>
                                 <a href="/alpinia/17222/" target="_blank" class="b-r-download">查看</a>
                             </li>
                                                             <li>
-                                <a href="/combat/17163.html" class="b-r-con-img" target="_blank">
+                                <a href="/combat/17163" class="b-r-con-img" target="_blank">
                                     <img src="https://img.homevv.com/uploadimg/ico/2020/0713/1594604981245967.png">
                                 </a>
                                 <div class="b-r-con-t">
-                                    <h3><a href="/combat/17163.html" target="_blank">我狙打得贼准无限金币破解版</a></h3>
-                                    <p><a href="/game/9_1_1.html">飞行射击</a> <i></i>44.78MB</p>
+                                    <h3><a href="/combat/17163" target="_blank">我狙打得贼准无限金币破解版</a></h3>
+                                    <p><a href="/game/9_1_1">飞行射击</a> <i></i>44.78MB</p>
                                 </div>
-                                <a href="/combat/17163.html" target="_blank" class="b-r-download">查看</a>
+                                <a href="/combat/17163" target="_blank" class="b-r-download">查看</a>
                             </li>
                                                             <li>
-                                <a href="/strategy/16163.html" class="b-r-con-img" target="_blank">
+                                <a href="/strategy/16163" class="b-r-con-img" target="_blank">
                                     <img src="https://img.homevv.com/uploadimg/ico/2020/0514/1589421980104030.png">
                                 </a>
                                 <div class="b-r-con-t">
-                                    <h3><a href="/strategy/16163.html" target="_blank">meaqua的喫茶铺</a></h3>
-                                    <p><a href="/game/4_1_1.html">角色扮演</a> <i></i>529.13MB</p>
+                                    <h3><a href="/strategy/16163" target="_blank">meaqua的喫茶铺</a></h3>
+                                    <p><a href="/game/4_1_1">角色扮演</a> <i></i>529.13MB</p>
                                 </div>
-                                <a href="/strategy/16163.html" target="_blank" class="b-r-download">查看</a>
+                                <a href="/strategy/16163" target="_blank" class="b-r-download">查看</a>
                             </li>
                                                             <li>
                                 <a href="/alpinia/16138/" class="b-r-con-img" target="_blank">
@@ -141,7 +141,7 @@
                                 </a>
                                 <div class="b-r-con-t">
                                     <h3><a href="/alpinia/16138/" target="_blank">战歌竞技场</a></h3>
-                                    <p><a href="/game/10_1_1.html">策略塔防</a> <i></i>962.84MB</p>
+                                    <p><a href="/game/10_1_1">策略塔防</a> <i></i>962.84MB</p>
                                 </div>
                                 <a href="/alpinia/16138/" target="_blank" class="b-r-download">查看</a>
                             </li>
@@ -151,7 +151,7 @@
                                 </a>
                                 <div class="b-r-con-t">
                                     <h3><a href="/strategy/15886/" target="_blank">南瓜先生2九龙城寨</a></h3>
-                                    <p><a href="/game/8_1_1.html">解谜闯关</a> <i></i>435.56MB</p>
+                                    <p><a href="/game/8_1_1">解谜闯关</a> <i></i>435.56MB</p>
                                 </div>
                                 <a href="/strategy/15886/" target="_blank" class="b-r-download">查看</a>
                             </li>
@@ -162,7 +162,7 @@
         </div>
         <!-- 分页 -->
         <div class="page">
-            <a href='/news/' class='hover currentPage on'>1</a><a href='/news/list_1_2.html' class=''>2</a><a href='/news/list_1_3.html' class=''>3</a><a href='/news/list_1_4.html' class=''>4</a><a href='/news/list_1_5.html' class=''>5</a><a href='/news/list_1_6.html' class=''>6</a><a href='/news/list_1_7.html' class=''>7</a><a href='/news/list_1_2.html' class='nextPage on'>下一页</a><a href='/news/list_1_36.html' class='lastPage on'>末页</a>            </div>
+            <a href='/news/' class='hover currentPage on'>1</a><a href='/news/list_1_2' class=''>2</a><a href='/news/list_1_3' class=''>3</a><a href='/news/list_1_4' class=''>4</a><a href='/news/list_1_5' class=''>5</a><a href='/news/list_1_6' class=''>6</a><a href='/news/list_1_7' class=''>7</a><a href='/news/list_1_2' class='nextPage on'>下一页</a><a href='/news/list_1_36' class='lastPage on'>末页</a>            </div>
     </div>
 </div>
 <script src="/js/pc/info.js"></script>

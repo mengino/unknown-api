@@ -6,13 +6,13 @@
                 <span>游戏类型：</span>
                 <a class="on" href="/game/">全部游戏</a>
                 {{ range .category }}
-                <a  href="/game?category={{ .ID }}.html" title="{{ .Name }}">{{ .Name }}</a>
+                <a  href="/game?category={{ .ID }}" title="{{ .Name }}">{{ .Name }}</a>
                 {{ end }}
             </p>
             <p>
                 <span>排序方式：</span>
-                <a href="/game/" class="on">最新</a>
-                <a href="/game?sort=1.html" >热门</a>
+                <a href="/game" class="on">最新</a>
+                <a href="/game?sort=hot" >热门</a>
             </p>
         </div>
         <div class="container-list">
@@ -20,16 +20,16 @@
                 {{ range .list }}
                     <li>
                         <h4>
-                            <a href="/detail/{{ .ID }}.html" title="{{ .Title }}" target="_blank">{{ .Title }}</a>
+                            <a href="/detail/{{ .ID }}" title="{{ .Title }}" target="_blank">{{ .Title }}</a>
                         </h4>
                         <div>
-                            <a href="/detail/{{ .ID }}.html" title="{{ .Title }}" target="_blank">
+                            <a href="/detail/{{ .ID }}" title="{{ .Title }}" target="_blank">
                                 <img src="{{ .Image }}">
                             </a>
                             <p>
                                 <b>类型：<span>{{ .Category.Name }}</span></b>
                                 <b>版本：<span>{{ .Version }}</span></b>
-                                <u>{{ .Desc }}</u>
+                                <u>{{ .Intro }}</u>
                             </p>
                         </div>
                         <h6><i>{{ .Size }}</i><em>{{ .CreatedAt.Format "2006-01-02" }}</em></h6>
@@ -40,14 +40,14 @@
         <!-- 分页 -->
         <div class="page">
             <a href='/game/' class='hover currentPage on'>1</a>
-            <a href='/game/2_1_2.html' class=''>2</a>
-            <a href='/game/2_1_3.html' class=''>3</a>
-            <a href='/game/2_1_4.html' class=''>4</a>
-            <a href='/game/2_1_5.html' class=''>5</a>
-            <a href='/game/2_1_6.html' class=''>6</a>
-            <a href='/game/2_1_7.html' class=''>7</a>
-            <a href='/game/2_1_2.html' class='nextPage on'>下一页</a>
-            <a href='/game/2_1_506.html' class='lastPage on'>末页</a>
+            <a href='/game/2_1_2' class=''>2</a>
+            <a href='/game/2_1_3' class=''>3</a>
+            <a href='/game/2_1_4' class=''>4</a>
+            <a href='/game/2_1_5' class=''>5</a>
+            <a href='/game/2_1_6' class=''>6</a>
+            <a href='/game/2_1_7' class=''>7</a>
+            <a href='/game/2_1_2' class='nextPage on'>下一页</a>
+            <a href='/game/2_1_506' class='lastPage on'>末页</a>
         </div>
     </div>
 </div>

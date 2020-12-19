@@ -1,11 +1,11 @@
 package model
 
-var (
+const (
 	GroupGame       = 1
-	GroupSoft       = 2
-	GroupNews       = 3
-	GroupCollection = 4
-	GroupTop        = 5
+	GroupSoft       = iota
+	GroupNews       = iota
+	GroupCollection = iota
+	GroupTop        = iota
 )
 
 // Category 分类模型

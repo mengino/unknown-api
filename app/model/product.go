@@ -18,5 +18,5 @@ type Product struct {
 	Hot        int              `json:"hot" gorm:"not null;default:0" sql:"index"`
 	Top        bool             `json:"top" gorm:"not null;default:false" sql:"index"`
 
-	// Category   Category         `json:"category" gorm:"foreignkey:CategoryID"`
+	Category Category `json:"category" gorm:"foreignkey:CategoryID"`
 }
