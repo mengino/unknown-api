@@ -1,11 +1,11 @@
 package model
 
 const (
-	GroupGame       = 1
-	GroupSoft       = iota
-	GroupNews       = iota
-	GroupCollection = iota
-	GroupTop        = iota
+	GroupGame = iota + 1
+	GroupSoft
+	GroupNews
+	GroupCollection
+	GroupTop
 )
 
 // Category 分类模型

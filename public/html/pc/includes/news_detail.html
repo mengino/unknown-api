@@ -6,21 +6,21 @@
                 <h2 class="r-t-h2">{{ .news.Title }}</h2>
                 <p class="r-t-p">
                     <span>{{ .news.CreatedAt.Format "2006-01-02" }}</span>
-                    <span>{{ .news.Author }}</span>
+                    <span>{{/* .news.Author */}}</span>
                 </p>
             </div>
             <div class="r-t-menu">
                 <div class="r-t-menu-l">
-                <a href="/detail/{{ .news.ID }}" target="_blank" class="r-t-menu-img">
-                    <img src="{{ .news.Image }}" />
+                <a href="/detail/{{ .news.Product.ID }}" target="_blank" class="r-t-menu-img">
+                    <img src="{{ .news.Product.Image }}" />
                 </a>
                 <ul>
                     <li class="r-t-menu-l1">
-                        <a target="_blank" href="/detail/{{ .news.ID }}">{{ .news.Title }}</a>
+                        <a target="_blank" href="/detail/{{ .news.Product.ID }}">{{ .news.Product.Title }}</a>
                     </li>
                     <li class="r-t-menu-l2">
                         <span>
-                            类型：<a target="_blank" href="/game?category={{ .news.Category.ID }}">{{ .news.Category.Title }}</a>
+                            类型：<a target="_blank" href="/game?category={{ .news.Product.Category.ID }}">{{ .news.Product.Category.Name }}</a>
                         </span>
                         <span>大小：<a>{{ .news.Product.Size }}</a></span>
                     </li>

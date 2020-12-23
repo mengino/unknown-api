@@ -28,6 +28,16 @@ type category struct {
 	CreatedAt time.Time
 }
 
+type query struct {
+	Page     int    `form:"page,default=1"`
+	Category int    `form:"category"`
+	Sort     string `form:"sort,default=sort"`
+}
+
+type uri struct {
+	ID int `uri:"id" binding:"required"`
+}
+
 // Index 首页
 func Index(c *gin.Context) {
 	response.HTML(c, http.StatusOK, "index.html", gin.H{

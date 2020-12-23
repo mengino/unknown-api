@@ -5,9 +5,9 @@
         <!--列表-->
         <div class="container-left">
             <div class="label_wrap">
-                <a href="/news/" class="on">全部</a>
+                <a href="/news/" {{ if eq .params.Category 0 }} class="on" {{ end }}>全部</a>
                 {{ range .category }}
-                    <a href="/news?category={{ .ID }}">{{ .Title }}</a>
+                    <a href="/news?category={{ .ID }}" {{ if eq $.params.Category .ID }} class="on" {{ end }}>{{ .Name }}</a>
                 {{ end }}
                 </div>
             <!--新闻列表-->
@@ -22,9 +22,7 @@
                                 <h3><a href="/news/{{ .ID }}" target="_blank">{{ .Title }}<i></i></a>
                                 </h3>
                                 <a class="m_heart_read" href="/news/{{ .ID }}" target="_blank">阅读全文</a>
-                                <p class="m_heat_p">
-                                    {{ .Desc }}
-                                </p>
+                                <p class="m_heat_p">{{ convert .Content }}...</p>
                                 <div class="m_heart_time">
                                     <span class="m_heart_time_span1"><i></i>{{ .CreatedAt.Format "2006-01-02" }}</span>
                                     <span class="m_heart_time_span2"><i></i>0</span>

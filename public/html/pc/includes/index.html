@@ -158,7 +158,7 @@
           <ul class="Tab_list clear_">
             <li class="cur_class"><a href="/game/">全部分类</a></li>
             {{ range .category }}
-              <li><a href="/game/{{ .ID }}">{{ .Title }}</a></li>
+              <li><a href="/game/{{ .ID }}">{{ .Name }}</a></li>
             {{ end }}
             <!-- <li><a href="/game/4_1_1">角色扮演</a></li> -->
           </ul>
@@ -281,7 +281,7 @@
       <ul class="Tab_list" style="display: block;">
         <li class="cur_class"><a href="/soft/">全部分类</a></li>
         {{ range .category }}
-          <li><a href="/soft/{{ .ID }}">{{ .Title }}</a></li>
+          <li><a href="/soft/{{ .ID }}">{{ .Name }}</a></li>
         {{ end }}
         <!-- <li><a href="/soft/16_1_1">影音播放</a></li> -->
       </ul>

@@ -26,7 +26,7 @@ func GetProductList(group, categoryID int, sort string) []model.Product {
 func GetProduct(id int) model.Product {
 	var product model.Product
 
-	db.New().Where("id = ?", id).Find(&product)
+	db.New().Preload("Category").Where("id = ?", id).Find(&product)
 
 	return product
 }

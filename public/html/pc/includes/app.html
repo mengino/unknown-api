@@ -4,15 +4,15 @@
         <div class="sub_nav">
             <p>
                 <span>游戏类型：</span>
-                <a class="on" href="/game/">全部游戏</a>
+                <a {{ if eq .params.Category 0 }} class="on" {{ end }} href="/{{ .nav }}?sort={{ .params.Sort }}&page={{ .params.Page }}">全部游戏</a>
                 {{ range .category }}
-                <a  href="/game?category={{ .ID }}" title="{{ .Name }}">{{ .Name }}</a>
+                <a {{ if eq $.params.Category .ID }} class="on" {{ end }} href="/{{ $.nav }}?category={{ .ID }}&sort={{ $.params.Sort }}&page={{ $.params.Page }}" title="{{ .Name }}">{{ .Name }}</a>
                 {{ end }}
             </p>
             <p>
                 <span>排序方式：</span>
-                <a href="/game" class="on">最新</a>
-                <a href="/game?sort=hot" >热门</a>
+                <a href="/{{ .nav }}?category={{ .params.Category }}&page={{ .params.Page }}" {{ if ne .params.Sort "hot" }} class="on" {{ end }}>最新</a>
+                <a href="/{{ .nav }}?sort=hot&category={{ .params.Category }}&page={{ .params.Page }}" {{ if eq .params.Sort "hot" }} class="on" {{ end }}>热门</a>
             </p>
         </div>
         <div class="container-list">
@@ -39,15 +39,15 @@
         </div>
         <!-- 分页 -->
         <div class="page">
-            <a href='/game/' class='hover currentPage on'>1</a>
-            <a href='/game/2_1_2' class=''>2</a>
-            <a href='/game/2_1_3' class=''>3</a>
-            <a href='/game/2_1_4' class=''>4</a>
-            <a href='/game/2_1_5' class=''>5</a>
-            <a href='/game/2_1_6' class=''>6</a>
-            <a href='/game/2_1_7' class=''>7</a>
-            <a href='/game/2_1_2' class='nextPage on'>下一页</a>
-            <a href='/game/2_1_506' class='lastPage on'>末页</a>
+            <a href='/{{ .nav }}/' class='hover currentPage on'>1</a>
+            <a href='/{{ .nav }}/2_1_2' class=''>2</a>
+            <a href='/{{ .nav }}/2_1_3' class=''>3</a>
+            <a href='/{{ .nav }}/2_1_4' class=''>4</a>
+            <a href='/{{ .nav }}/2_1_5' class=''>5</a>
+            <a href='/{{ .nav }}/2_1_6' class=''>6</a>
+            <a href='/{{ .nav }}/2_1_7' class=''>7</a>
+            <a href='/{{ .nav }}/2_1_2' class='nextPage on'>下一页</a>
+            <a href='/{{ .nav }}/2_1_506' class='lastPage on'>末页</a>
         </div>
     </div>
 </div>

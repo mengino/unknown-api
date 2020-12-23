@@ -380,6 +380,7 @@ body { min-width: 1200px; font-family: 'Microsoft YaHei','Arial','Heiti SC'; fon
 .m_heart_tit h3 i{ position: absolute; background: url(../../img/one_img.png) no-repeat 10px -50px; display: inline-block; width: 26px; height: 26px; top: 0; right: -21px; display: none; }
 .m_heart_read{ position: absolute; background: #dfdfdf; padding: 0 5px; color: #fff; cursor: pointer; top: 62px; right: 0; display: none; }
 .m_heat_p{ height: 90px; overflow: hidden; text-align: justify; line-height: 28px; font-family: 'Microsoft YaHei'; font-size: 14px; color: #555; }
+/* .m_heat_p{ height: 90px; overflow: hidden; line-height: 28px; font-family: 'Microsoft YaHei'; font-size: 14px; color: #555; text-overflow: ellipsis; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 3;} */
 .m_heart_time{ height: 16px; line-height: 16px; }
 .m_heart_time span{ color:#999; }
 .m_heart_time_span1{ margin-right: 15px; }

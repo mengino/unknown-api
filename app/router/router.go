@@ -7,6 +7,7 @@ import (
 	"dlsite/app/router/web"
 	"html/template"
 	"path/filepath"
+	"strings"
 
 	"github.com/gin-contrib/multitemplate"
 	"github.com/gin-gonic/gin"
@@ -16,6 +17,9 @@ func funcMap() template.FuncMap {
 	return template.FuncMap{
 		"add": func(i int) int {
 			return i + 1
+		},
+		"convert": func(s string) string {
+			return strings.Split(s, "\n")[0]
 		},
 	}
 }
