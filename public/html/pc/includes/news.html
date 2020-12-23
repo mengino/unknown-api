@@ -1,13 +1,13 @@
-{{define "content"}}
+{{ define "content" }}
 <!--内容1-->
 <div class="container1">
     <div class="W1200">
         <!--列表-->
         <div class="container-left">
             <div class="label_wrap">
-                <a href="/news/" {{ if eq .params.Category 0 }} class="on" {{ end }}>全部</a>
+                <a href="/news?page={{ .params.Page }}" {{ if eq .params.Category 0 }} class="on" {{ end }}>全部</a>
                 {{ range .category }}
-                    <a href="/news?category={{ .ID }}" {{ if eq $.params.Category .ID }} class="on" {{ end }}>{{ .Name }}</a>
+                    <a href="/news?category={{ .ID }}&page={{ $.params.Page }}" {{ if eq $.params.Category .ID }} class="on" {{ end }}>{{ .Name }}</a>
                 {{ end }}
                 </div>
             <!--新闻列表-->
@@ -163,5 +163,7 @@
             <a href='/news/' class='hover currentPage on'>1</a><a href='/news/list_1_2' class=''>2</a><a href='/news/list_1_3' class=''>3</a><a href='/news/list_1_4' class=''>4</a><a href='/news/list_1_5' class=''>5</a><a href='/news/list_1_6' class=''>6</a><a href='/news/list_1_7' class=''>7</a><a href='/news/list_1_2' class='nextPage on'>下一页</a><a href='/news/list_1_36' class='lastPage on'>末页</a>            </div>
     </div>
 </div>
+{{ end }}
+{{ define "js" }}
 <script src="/js/pc/info.js"></script>
-{{end}}
+{{ end }}
