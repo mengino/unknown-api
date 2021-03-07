@@ -25,7 +25,7 @@ func main() {
 		log.Fatal(err)
 	} else {
 		defer conn.Close()
-		// conn.AutoMigrate(&model.Article{}, &model.Category{}, &model.Product{})
+		// conn.AutoMigrate(&model.Article{}, &model.Category{}, &model.Product{}, &model.User{})
 		// return
 	}
 
